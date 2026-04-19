@@ -9,6 +9,16 @@ CLAUDE_DIR="${CLAUDE_HOME:-$HOME/.claude}"
 ASSUME_YES=false
 REMOVED=0
 
+SKILLS=(
+  a11y-design a11y-dev a11y-qa
+  brief-prd
+  deploy
+  linkedin-reflect linkedin-show-and-tell linkedin-teach
+  markitdown-convert
+  meeting-summary
+  transcript-anonymizer
+)
+
 for arg in "$@"; do
   case $arg in
     --yes|-y) ASSUME_YES=true ;;
@@ -30,6 +40,11 @@ echo "This will remove:"
 for f in "${FILES_TO_REMOVE[@]}"; do
   if [ -f "$f" ]; then
     echo "  - $f"
+  fi
+done
+for name in "${SKILLS[@]}"; do
+  if [ -d "$CLAUDE_DIR/skills/$name" ]; then
+    echo "  - $CLAUDE_DIR/skills/$name/"
   fi
 done
 echo ""
@@ -56,10 +71,24 @@ for f in "${FILES_TO_REMOVE[@]}"; do
   fi
 done
 
+for name in "${SKILLS[@]}"; do
+  if [ -d "$CLAUDE_DIR/skills/$name" ]; then
+    rm -rf "$CLAUDE_DIR/skills/$name"
+    echo "  🗑  removed $CLAUDE_DIR/skills/$name/"
+    REMOVED=$((REMOVED + 1))
+  fi
+done
+
 # Clean up empty shared/ dir if nothing else is in it
 if [ -d "$CLAUDE_DIR/shared" ] && [ -z "$(ls -A "$CLAUDE_DIR/shared")" ]; then
   rmdir "$CLAUDE_DIR/shared"
   echo "  🗑  removed empty $CLAUDE_DIR/shared/"
+fi
+
+# Clean up empty skills/ dir if nothing else is in it
+if [ -d "$CLAUDE_DIR/skills" ] && [ -z "$(ls -A "$CLAUDE_DIR/skills")" ]; then
+  rmdir "$CLAUDE_DIR/skills"
+  echo "  🗑  removed empty $CLAUDE_DIR/skills/"
 fi
 
 echo ""
