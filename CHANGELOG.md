@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+## [0.3.0] — 2026-04-19
+
+### Added
+- `shared/DESIGN.md` — full Manfred design system specification (colors, typography, components, dark mode, accessibility), sourced from `github.com/jens-wedin/manfred-design_system`
+- `shared/design-principles.md` — 12-principle decision framework for Manfred work
+- `install.sh` now installs DESIGN.md and design-principles.md alongside manfred-brand.md
+- `uninstall.sh` removes DESIGN.md and design-principles.md
+
+### Changed
+- `shared/manfred-brand.md` rewritten with real content (brand thesis, values, voice, color palette, typography), replacing the v0.1.0 placeholder
+- README "What gets installed" table updated with DESIGN.md and design-principles.md rows
+
 ## [0.2.0] — 2026-04-19
 
 ### Added

@@ -133,7 +133,9 @@ install_file "shared/home-claude.md" "$CLAUDE_DIR/CLAUDE.md" "CLAUDE.md (home-le
 echo ""
 
 echo "📚 Shared References"
-install_file "shared/manfred-brand.md" "$CLAUDE_DIR/shared/manfred-brand.md" "Manfred brand guidelines"
+install_file "shared/manfred-brand.md"     "$CLAUDE_DIR/shared/manfred-brand.md"     "Manfred brand guidelines"
+install_file "shared/DESIGN.md"            "$CLAUDE_DIR/shared/DESIGN.md"            "Design system spec"
+install_file "shared/design-principles.md" "$CLAUDE_DIR/shared/design-principles.md" "Design principles"
 echo ""
 
 echo "⚡ Skills"

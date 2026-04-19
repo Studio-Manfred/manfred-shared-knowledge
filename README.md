@@ -30,6 +30,8 @@ Then browse with `/plugin` and install individual plugins with `/plugin install 
 |--------|-------------|
 | `shared/home-claude.md` | `~/.claude/CLAUDE.md` |
 | `shared/manfred-brand.md` | `~/.claude/shared/manfred-brand.md` |
+| `shared/DESIGN.md` | `~/.claude/shared/DESIGN.md` |
+| `shared/design-principles.md` | `~/.claude/shared/design-principles.md` |
 | `skills/<name>/` (11 skills) | `~/.claude/skills/<name>/` |
 
 Plus any plugins you install via `/plugin install`.

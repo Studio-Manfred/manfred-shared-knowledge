@@ -34,6 +34,8 @@ echo ""
 FILES_TO_REMOVE=(
   "$CLAUDE_DIR/CLAUDE.md"
   "$CLAUDE_DIR/shared/manfred-brand.md"
+  "$CLAUDE_DIR/shared/DESIGN.md"
+  "$CLAUDE_DIR/shared/design-principles.md"
 )
 
 echo "This will remove:"
