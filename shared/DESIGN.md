@@ -1,12 +1,14 @@
 # Design System: Manfred
 
+> **Context:** This document specifies the Manfred design system — the shared component library and token set used by Manfred and its clients. For the studio itself (mission, services, team, voice), see `manfred-brand.md`. For the decision framework, see `design-principles.md`.
+
 ## 1. Visual Theme & Atmosphere
 
-Manfred's design language sits at the intersection of **business capability and human warmth**. The brand carries two colors by name — `business-blue` and `human-pink` — and that pairing is not decorative: it is the thesis. Digital products made with this system should feel professional enough to earn trust in enterprise contexts, and warm enough that the people using them feel seen, not processed.
+Manfred's visual language sits at the intersection of **business capability and human warmth**. The system carries two colors by name — `business-blue` and `human-pink` — and that pairing is not decorative: it encodes the studio's mission (building better product companies, making the product world more customer-driven) into the visual layer. Products built with this system should feel professional enough to earn trust in enterprise contexts, and warm enough that the people using them feel seen, not processed.
 
 The visual direction favors **restraint and warmth over ornament**. Warm neutrals replace the cold grays of generic tech UI. Type is a single humanist sans-serif used at generous sizes with comfortable line-height. Color is reserved for action and meaning — the blue leads, the warm tones hold the room, and accents appear only when they signal intent.
 
-**Core identity:** Business-ready, human-warm, accessible. A design system for teams that want their software to feel like it was made by people, for people.
+**Core identity:** Business-ready, human-warm, accessible. A design system for teams that want their software to feel like it was made by people, for people — a visual expression of Manfred's mission to make the product world more customer-driven.
 
 **Stack note:** The implementation ships as `@jens-wedin/design-system` — Tailwind CSS v4 + Radix UI + shadcn-shaped component APIs. The token layer is what keeps the brand coherent; the component layer is thin glue over proven primitives.
 

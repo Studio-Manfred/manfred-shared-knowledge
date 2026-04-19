@@ -1,75 +1,124 @@
 # Manfred Brand Guidelines
 
-## Brand Thesis
+## What Manfred Is
 
-**Business and human, at the same time.**
+Manfred is a product design studio. The tagline on the front door:
 
-The two headline tokens — `business-blue` (`#2c28ec`) and `human-pink` (`#efd6d3`) — are not a color scheme. They are the brand's argument: that software can be serious enough to trust with real work and warm enough that the people using it feel seen. Manfred is built by and for people who don't want to choose between those two things.
+> **Building Better Product Companies.**
+
+The mission, in one line:
+
+> **Make the product world more customer driven.**
+
+Everything Manfred ships — research, design, leadership engagements, training, writing, the design system — is in service of that mission.
+
+## Manfred Magic
+
+The studio's shorthand for what it brings into a room: **smart work, sharp thinking, and a bit of fun.** It is the unserious name for a serious idea — that craft and warmth aren't trade-offs. You get both, or you haven't actually delivered.
+
+## Services
+
+Manfred is primarily a consulting studio. Engagements fall into four buckets:
+
+- **Design & Product Leadership** — interim leadership, coaching, sparring, design-maturity work. "Just when you need it."
+- **Customer Research** — qualitative and quantitative. Understanding people before shipping things to them.
+- **Product, UX & Service Design** — the hands-on craft: flows, screens, services, systems.
+- **Training & Courses** — open classes and custom programs. Topics include Design Leadership, Product Discovery, Customer Journey Mapping, Business Design, DesignOps, Design Thinking for HR, and CX Management (the last in partnership with House of CX through IHM business school).
+
+Also on offer when it fits: workshops, co-creation sessions, speaking, writing — "winging it with a whiteboard" is a listed service.
+
+## The Mmmms (the team)
+
+- **Jens Wedin** — Design Director & Service Designer
+- **Selma Hallqvist** — Senior Product Designer
+- **Axel Nathorst-Böös** — Design & Product Leadership
+- **Moa Bogren** — Senior User Research (UXR)
+
+Small team, senior people, hands-on work.
+
+## Clients
+
+Manfred has worked with product teams across messy scale-ups and heavy-suit orgs alike. Named on the site: **Boka Direkt · Mentimeter · Fishbrain · Svea Bank · Trygg-Hansa**.
 
 ## Brand Values
 
-### Warmth
+### Customer-driven
 
-- Warm defaults over clinical ones. Soft off-black (`#1e1e24`) over pure black. Warm beige canvas over cold gray.
-- UI copy reads like a person wrote it for a person.
-- Empty states welcome rather than scold.
+- Users come before features, hypotheses before roadmaps, research before design.
+- "Most products and services will never be used or bought. Why build something nobody wants?" — from the Product Discovery course page. That question is the studio's posture.
 
-### Precision
+### Craft Taken Seriously (Yourself, Not So Much)
 
-- Language is exact. Tokens are explicit. Spacing is on a scale.
-- Nothing lands in a component "because it looks right" — it lands because a token says so.
-- Every variant earns its place. If it isn't being used, it doesn't ship.
+- From the careers page: *"You don't take yourself too seriously, but you take the craft seriously."* That's the line.
+- Ship work that deserves the hours put into it. But keep the atmosphere human — "winging it with a whiteboard" is allowed.
+
+### Human + Business Capability at the Same Time
+
+- The design system encodes this in two color tokens: `business-blue` (`#2c28ec`) and `human-pink` (`#efd6d3`). Professional enough to trust with real work. Warm enough that people feel seen.
+- In engagements, this shows up as: strategic clarity without corporate stiffness, research depth without academic distance.
+
+### Critical & Ethical Design
+
+- Technology brings responsibility. Manfred runs workshops on Critical Design (including at Stockholm Xperience) and publishes on ethical design practice.
+- Ask what the design *does in the world*, not only whether it ships.
 
 ### Accessibility as Baseline
 
-- Not a compliance line item. A core brand value.
-- WCAG 2.2 AA minimum, AAA where practical. Tested with keyboard and screen readers, not just axe.
-- Contrast, focus, motion preferences, keyboard navigation — non-negotiable.
-
-### Honesty
-
-- Say what the software does. Don't dress it up.
-- "Save changes" beats "Submit." "You're signed in as …" beats "Current user identity."
-- Error messages explain and help. They never blame.
+- Non-negotiable across everything Manfred makes. WCAG 2.2 AA minimum, AAA where practical.
+- Tested with assistive technology, not only automated tools.
 
 ### Sustainability in the Small
 
-- Light pages, small bundles, considered font loading.
-- One typeface (Host Grotesk), bundled and subset where appropriate.
+- Lighter pages, smaller bundles, considered font loading.
 - Design for longevity — avoid trendy patterns that age in a year.
 
 ## Brand Voice
 
 ### Tone
 
-- **Clear** — say what you mean.
-- **Warm** — address the reader as a person, not a user record.
-- **Confident** — no apology or hedging in routine copy.
-- **Direct** — short sentences, active voice, verb-led.
-- **Unflashy** — the product is the hero. Copy is the quiet shoulder-tap.
+- **Warm and informal** — "Yep." "Of course." "Cool." "Ping us."
+- **Playful** — "Manfred Magic", "the Mmmms", "winging it with a whiteboard"
+- **Direct and confident** — short sentences, clear claims, no hedging
+- **Unflashy** — the product is the hero; copy is the quiet shoulder-tap
+- **Craft-serious** — casual register, never sloppy thinking
+
+The voice is informal without being glib. Read the site copy back and you'll find full stops, plain verbs, and an occasional wink — never forced enthusiasm, never bullet-list marketing-speak.
 
 ### Writing Principles
 
 - Lead with the benefit to the reader.
 - Plain language over jargon. Every time.
-- Specific and actionable: "Save changes" not "Submit form data."
 - Short sentences, short paragraphs.
 - Inclusive language always — no gendered terms, no ableist metaphors, no cultural assumptions.
-- Parity between Swedish and English where the product supports both.
+- Swedish and English parity where the product supports both; pick one and commit per surface.
+- A light joke is fine. Forced levity is not.
 
 ### CTAs
 
-- Action-oriented, short: "Get started," "Save," "Continue," "Send," "Try it."
+- Action-oriented, short: "Get started," "Save," "Continue," "Send," "Get in touch," "Ping us."
 - Never "Click here." Never "Submit."
 
 ### Errors
 
-- What happened, what to do next, one clear action. In that order.
-- "We couldn't save your changes — try again, or refresh the page if it keeps failing." Not "Error 500."
+- What happened, what to do next, one clear action — in that order.
+- Explain, don't blame. "We couldn't save your changes — try again, or refresh the page if it keeps failing." Not "Error 500."
 
-## Color Palette
+## Writing & Thought Leadership
 
-Full token specification is in `~/.claude/shared/DESIGN.md`. Quick reference:
+Manfred publishes regularly on the studio blog (`/news`) and Jens Wedin writes on LinkedIn in Swedish (see the `linkedin-*` skills for voice specifics: *reflect*, *teach*, *show-and-tell*). Recurring themes:
+
+- Customer research (qualitative vs. quantitative, mindset, synthesis)
+- Critical and ethical design
+- Product discovery and design maturity
+- Personal/running/life notes ("Road to Average" series) — the studio voice includes the person writing it
+
+The Swedish book: **Upplevelseblomman** (`upplevelseblomman.se`).
+
+## Visual Language
+
+The visual system is codified in `github.com/jens-wedin/manfred-design_system` and documented for LLM use in `~/.claude/shared/DESIGN.md`. Quick reference:
+
+### Colors
 
 | Name | Token | Hex | Role |
 |---|---|---|---|
@@ -80,42 +129,27 @@ Full token specification is in `~/.claude/shared/DESIGN.md`. Quick reference:
 | Light Beige | `--color-light-beige` | `#f4f3e8` | Default warm background |
 | White | `--color-white` | `#ffffff` | Default surface, inverse text |
 
-### Color Philosophy
+Blue leads, warm neutrals hold the room, pink is for moments of human emphasis. Named utilities (`bg-business-blue`, `bg-human-pink`, …) are literal primitives and **do not flip in dark mode**. Use semantic tokens (`bg-background`, `bg-primary`, …) for theme-aware styling.
 
-Blue leads, warm neutrals hold the room, pink is for moments of human emphasis. The palette is restrained so that content — not decoration — carries the weight. Named brand utilities (`bg-business-blue`, `bg-human-pink`, etc.) are literal primitives and **do not flip in dark mode**. Use semantic tokens (`bg-background`, `bg-primary`, etc.) for theme-aware styling.
+### Typography
 
-## Typography
+- **Host Grotesk** — all UI. Humanist sans-serif. Scale `xs` (12px) → `5xl` (56px). Weights 300 / 400 / 500 / 600 / 700 / 800.
+- **Guttery** — Manfred logotype only. Never used in UI.
 
-**Font:** Host Grotesk. **Logotype only:** Guttery (reserved for the Manfred mark; never used in UI).
+### Layout & Atmosphere
 
-Host Grotesk is a humanist sans-serif with geometric precision and warm apertures — the typographic version of the brand thesis. Scale runs from `xs` (12px) to `5xl` (56px). Weights: 300 / 400 / 500 / 600 / 700 / 800.
+- Generous whitespace. Sections breathe.
+- Warm background rhythm: alternate `light-beige` canvas with `white` or `beige` cards. Avoid gray-on-gray layering.
+- Flat first. Depth is earned. No heavy shadows, gradients, or neumorphism.
 
-Full typographic scale and role mapping is in `DESIGN.md`.
+## Contact
 
-## Layout & Atmosphere
-
-- **Generous whitespace.** Sections breathe. The Nordic love of room applies.
-- **Warm background rhythm.** Alternate `light-beige` canvas with `white` or `beige` cards. Avoid gray-on-gray layering — that's not Manfred's tonal range.
-- **Flat first.** Depth is earned; heavy shadows and gradients don't belong here.
-
-## Brand Strategy Context
-
-Manfred is the design practice of Jens Wedin. The design system exists to codify how Manfred-made software looks and behaves so that everything shipped under the name is recognizable, consistent, and accessible — without every new project reinventing basics.
-
-### Audiences
-
-- **Teams adopting the system** — other engineers, other studios, products that want the Manfred look without rebuilding it. They get: tokens, components, and a short path from `npm install` to shipping.
-- **People using the software** — the actual end users of products built on this system. They get: fast, legible, accessible, warm interfaces.
-
-Both audiences get equal weight. A system that's lovely to build with but poor for end users is a failure. So is one that's great for end users but impossible for teams to adopt.
-
-### Research & Evolution
-
-The brand is young and will evolve as it gets used in more contexts. Versioned, additive changes through the design system repo. Breaking changes announced in the CHANGELOG with migration notes (see the `v0.1.x → v0.2.0` shadcn-shapes migration as the template).
+- **Work inquiries:** `hello@studiomanfred.com`
+- **Site:** `studiomanfred.com`
 
 ## Quick Reference
 
 - **Full design system spec:** `~/.claude/shared/DESIGN.md`
 - **Decision framework:** `~/.claude/shared/design-principles.md`
-- **Source of truth (code + Storybook):** `github.com/jens-wedin/manfred-design_system`
-- **Distributed package:** `@jens-wedin/design-system`
+- **Design system source:** `github.com/jens-wedin/manfred-design_system`
+- **Shared knowledge repo:** `github.com/jens-wedin/manfred-shared-knowledge`
