@@ -10,6 +10,7 @@ CLAUDE_DIR="${CLAUDE_HOME:-$HOME/.claude}"
 FORCE=false
 INSTALLED=0
 SKIPPED=0
+FAILED=0
 
 # Parse flags
 for arg in "$@"; do
@@ -32,10 +33,8 @@ install_file() {
   if [ -f "$local_path" ] && [ "$FORCE" = false ]; then
     echo "  ⏭  $label — already exists, skipping"
     SKIPPED=$((SKIPPED + 1))
-    return
-  fi
-
-  if [ -f "$local_path" ] && [ "$FORCE" = true ]; then
+    return 0
+  elif [ -f "$local_path" ] && [ "$FORCE" = true ]; then
     local backup
     backup="${local_path}.backup.$(date +%Y%m%d%H%M%S)"
     cp "$local_path" "$backup"
@@ -46,12 +45,15 @@ install_file() {
   dir=$(dirname "$local_path")
   mkdir -p "$dir"
 
-  if curl -fsSL "$REPO_RAW/$remote_path" -o "$local_path" 2>/dev/null; then
+  local tmp_path="${local_path}.tmp"
+  if curl -fsSL "$REPO_RAW/$remote_path" -o "$tmp_path" 2>/dev/null; then
+    mv "$tmp_path" "$local_path"
     echo "  ✅ $label"
     INSTALLED=$((INSTALLED + 1))
   else
+    rm -f "$tmp_path"
     echo "  ❌ $label — download failed"
-    return 1
+    FAILED=$((FAILED + 1))
   fi
 }
 
@@ -69,6 +71,9 @@ echo ""
 echo "────────────────────────────────────────────────"
 echo "  Installed: $INSTALLED file(s)"
 echo "  Skipped:   $SKIPPED file(s) (already exist)"
+if [ $FAILED -gt 0 ]; then
+  echo "  Failed:    $FAILED file(s)"
+fi
 echo "────────────────────────────────────────────────"
 echo ""
 
@@ -88,3 +93,7 @@ fi
 echo "📝 For project-level setup, copy the template CLAUDE.md to your repo:"
 echo "   curl -fsSL $REPO_RAW/CLAUDE.md -o ./CLAUDE.md"
 echo ""
+
+if [ $FAILED -gt 0 ]; then
+  exit 1
+fi
