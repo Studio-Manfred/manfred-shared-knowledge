@@ -51,14 +51,17 @@ Open a PR for any of:
 - **Commands (slash commands / prompts)** — add under `commands/<name>.md`; add an `install_file` call to `install.sh`
 - **Plugins** — scaffold under `plugins/<name>/` per [Claude Code plugin docs](https://docs.claude.com/en/docs/claude-code/plugins), then register the plugin in `.claude-plugin/marketplace.json` under the `plugins` array
 - **Shared references** — add under `shared/`; add an `install_file` call to `install.sh`
+- **Role playbooks** — add under `shared/roles/<role-name>.md`; add an `install_file` call to `install.sh`
 
 Use conventional commits. Update `CHANGELOG.md` in the same PR.
 
 ## Uninstall
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/jens-wedin/manfred-shared-knowledge/main/uninstall.sh | bash
+curl -fsSL https://raw.githubusercontent.com/jens-wedin/manfred-shared-knowledge/main/uninstall.sh | bash -s -- --yes
 ```
+
+Run without `--yes` (by downloading the script first) for interactive confirmation.
 
 Then inside Claude Code:
 

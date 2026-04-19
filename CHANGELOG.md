@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+## [0.1.1] — 2026-04-19
+
+### Fixed
+- `uninstall.sh` piped via `curl | bash` now errors clearly with a `--yes` hint instead of silently aborting on consumed stdin
+- README uninstall command updated to pass `-s -- --yes` so `curl | bash` works end-to-end
+
+### Added
+- `*.backup.*` to `.gitignore` (installer backup files)
+- Contributing guide entry for `shared/roles/` playbooks
+
 ## [0.1.0] — 2026-04-19
 
 ### Added

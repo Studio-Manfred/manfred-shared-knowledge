@@ -35,6 +35,12 @@ done
 echo ""
 
 if [ "$ASSUME_YES" = false ]; then
+  if [ ! -t 0 ]; then
+    echo "Error: stdin is not a terminal (piped execution detected)."
+    echo "Re-run with --yes to skip the confirmation prompt:"
+    echo "  curl -fsSL https://raw.githubusercontent.com/jens-wedin/manfred-shared-knowledge/main/uninstall.sh | bash -s -- --yes"
+    exit 1
+  fi
   read -r -p "Proceed? [y/N] " reply
   case "$reply" in
     y|Y|yes|YES) ;;
