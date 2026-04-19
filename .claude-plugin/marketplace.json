@@ -1,0 +1,13 @@
+{
+  "name": "manfred",
+  "owner": {
+    "name": "Jens Wedin (Manfred)",
+    "email": "jens@studiomanfred.com",
+    "url": "https://studiomanfred.com"
+  },
+  "metadata": {
+    "description": "Shared Claude Code skills, commands, and plugins for Manfred",
+    "version": "0.1.0"
+  },
+  "plugins": []
+}
