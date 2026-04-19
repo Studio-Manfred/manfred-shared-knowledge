@@ -4,6 +4,19 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+## [0.2.0] — 2026-04-19
+
+### Added
+- Bundled 11 Manfred skills under `skills/`: `a11y-design`, `a11y-dev`, `a11y-qa`, `brief-prd`, `deploy`, `linkedin-reflect`, `linkedin-show-and-tell`, `linkedin-teach`, `markitdown-convert`, `meeting-summary`, `transcript-anonymizer`
+- `install.sh` now performs a shallow `git clone` to fetch multi-file skills and copies them into `~/.claude/skills/<name>/`
+- `install.sh` errors clearly when `git` is not on `PATH`
+- `uninstall.sh` removes installed skill directories (honours `--yes` and the TTY guard)
+- README documents the 11 bundled skills and the planned plugin migration
+
+### Changed
+- README "What gets installed" table now includes the skills row
+- `install.sh` honours optional `MANFRED_REPO_GIT` env var for testing against a local checkout
+
 ## [0.1.1] — 2026-04-19
 
 ### Fixed

@@ -9,6 +9,10 @@ Manfred's shared reference docs live in `~/.claude/shared/`. Consult them when r
 - `~/.claude/shared/manfred-brand.md` — brand guidelines
 - `~/.claude/shared/roles/` — role-specific playbooks (added over time)
 
+## Skills
+
+Manfred skills are installed under `~/.claude/skills/` and trigger automatically on keywords. See each skill's `SKILL.md` for its trigger list.
+
 ## Plugins
 
 Manfred ships skills, commands, and plugins through the `manfred` plugin marketplace. To register it (one-time, inside Claude Code):

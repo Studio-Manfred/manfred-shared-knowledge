@@ -14,7 +14,7 @@ A public repo that packages Manfred's shared Claude Code assets so every team me
 curl -fsSL https://raw.githubusercontent.com/jens-wedin/manfred-shared-knowledge/main/install.sh | bash
 ```
 
-Re-run with `--force` to overwrite existing files (backups are created automatically).
+Re-run with `--force` to overwrite existing files (backups are created automatically). Skills install via a shallow git clone, so `git` must be available on your machine.
 
 **2. Register the plugin marketplace (inside Claude Code):**
 
@@ -26,12 +26,33 @@ Then browse with `/plugin` and install individual plugins with `/plugin install 
 
 ## What gets installed
 
-| File | Destination |
-|------|-------------|
+| Source | Destination |
+|--------|-------------|
 | `shared/home-claude.md` | `~/.claude/CLAUDE.md` |
 | `shared/manfred-brand.md` | `~/.claude/shared/manfred-brand.md` |
+| `skills/<name>/` (11 skills) | `~/.claude/skills/<name>/` |
 
 Plus any plugins you install via `/plugin install`.
+
+## Skills
+
+The installer adds these 11 skills to `~/.claude/skills/`. Each triggers automatically on specific phrases described in its `SKILL.md` frontmatter.
+
+| Skill | Purpose |
+|-------|---------|
+| `a11y-design` | Review designs for accessibility before handoff |
+| `a11y-dev` | Write accessible front-end code (WCAG, ARIA, keyboard) |
+| `a11y-qa` | Run accessibility audits on implemented code |
+| `brief-prd` | Author a Scandic-style 8-section product brief |
+| `deploy` | Cut a release — changelog, version bump, tag, push |
+| `linkedin-reflect` | Reflective LinkedIn post (Swedish, Jens Wedin voice) |
+| `linkedin-show-and-tell` | Demo/showcase LinkedIn post (Swedish) |
+| `linkedin-teach` | Teaching LinkedIn post (Swedish) |
+| `markitdown-convert` | Batch-convert PDFs/docs/images to Markdown |
+| `meeting-summary` | Summarize meeting notes or transcripts |
+| `transcript-anonymizer` | Strip PII from transcripts for GDPR compliance |
+
+Skills ship as loose files for now. A migration to proper Claude Code plugins — distributed and auto-updated through the `manfred` marketplace — is planned for a later release.
 
 ## Project-level setup
 
