@@ -74,24 +74,63 @@ Manfred has worked with product teams across messy scale-ups and heavy-suit orgs
 
 ## Brand Voice
 
-### Tone
+Manfred's voice is warmer and stranger than "warm and professional." It's conversational, self-aware, and a little odd. The studio has a small repertoire of rhythms and shorthand that are recognizably Manfred — use them.
 
-- **Warm and informal** — "Yep." "Of course." "Cool." "Ping us."
-- **Playful** — "Manfred Magic", "the Mmmms", "winging it with a whiteboard"
-- **Direct and confident** — short sentences, clear claims, no hedging
-- **Unflashy** — the product is the hero; copy is the quiet shoulder-tap
-- **Craft-serious** — casual register, never sloppy thinking
+### The Register
 
-The voice is informal without being glib. Read the site copy back and you'll find full stops, plain verbs, and an occasional wink — never forced enthusiasm, never bullet-list marketing-speak.
+- **Conversational fragments.** "Yep." "Of course." "Cool." "Even better." These are full sentences in Manfred copy. Punctuation is rhythm.
+- **Shrug ellipsis.** "…winging it with a whiteboard…" "We do services, if that's what you're looking for." A trail-off signals we're not trying too hard.
+- **Direct second person.** "You like consulting? Cool." "Want to make your org feel smarter and more human?" Talk *to* the reader, not about some abstract market.
+- **Concrete over abstract.** "Messy scale-ups, suit-heavy orgs." Not "mid-sized to enterprise clients." Name the thing.
+- **Self-deprecating where most brands posture.** "Road to Average" (a series about being average at a video game) is a brand asset. So is admitting to "winging it." This is the posture.
+
+### Rhythms to Reach For
+
+**The Q&A beat** — headline poses a question, copy answers casually:
+
+> **Product, UX and Service Design?** Yep.
+> **Customer Research?** Of course.
+> **Design & Product Leadership?** Just when you need it.
+
+**The serious-serious-wink triplet** — two credible, one human:
+
+> Smart work, sharp thinking, and a bit of fun.
+> Great skills and big hearts.
+
+**The provocation where a sales pitch would go** — open with a pointed question, not a benefits list:
+
+> Most products and services will never be used or bought. Why build something nobody wants?
+
+### Manfred Vocabulary
+
+Studio-coined shorthand. Use it in internal and external copy where warmth fits.
+
+- **Manfred Magic** — the mood the studio brings. Smart + sharp + a bit of fun.
+- **the Mmmms** — the team.
+- **peeps** — people/colleagues in casual contexts.
+- **〰️** — acceptable ornamental separator on longer lists, per the homepage.
+- **Ping us** — call-to-action alternative to "Contact us." Warmer, less transactional.
+
+### Anti-Patterns
+
+Things Manfred does not say.
+
+- **No marketing verbs.** Never: *transform, empower, leverage, unlock, supercharge, drive, deliver value.* Always: *do, build, make, ship, help, teach, research.*
+- **No corporate adjectives.** Never: *cutting-edge, world-class, innovative, best-in-class, passionate.* Confidence is shown, not claimed.
+- **No "we're passionate about…".** If it's true, the work shows it.
+- **No feature-list structure where a conversation would do.** "Our services include…" is wrong. A two-word headline followed by "Yep." is right.
+- **No forced levity.** A light joke is fine. Emoji clutter, exclamation stacking, and "haha we're quirky" energy are not.
+- **No hedging.** "We might be able to help you…" → "Ping us."
+- **No "Click here."** No "Submit." See CTAs below.
 
 ### Writing Principles
 
 - Lead with the benefit to the reader.
 - Plain language over jargon. Every time.
-- Short sentences, short paragraphs.
+- Short sentences, short paragraphs. Fragments allowed.
 - Inclusive language always — no gendered terms, no ableist metaphors, no cultural assumptions.
-- Swedish and English parity where the product supports both; pick one and commit per surface.
-- A light joke is fine. Forced levity is not.
+- Swedish and English coexist without apology. Pick one per surface and commit; bilingual audiences are the norm, not the exception.
+- If you can cut a word, cut it.
 
 ### CTAs
 
@@ -102,6 +141,17 @@ The voice is informal without being glib. Read the site copy back and you'll fin
 
 - What happened, what to do next, one clear action — in that order.
 - Explain, don't blame. "We couldn't save your changes — try again, or refresh the page if it keeps failing." Not "Error 500."
+
+### Quick Test
+
+If you're not sure whether a draft sounds like Manfred, ask:
+
+1. Could I read this out loud without cringing?
+2. Would I say "yep" in response to any of these headlines? If no, they're probably too corporate.
+3. Is there at least one fragment, one concrete noun, and zero marketing verbs?
+4. Does it trust the reader to be an adult? (No over-explaining, no hedging, no performative enthusiasm.)
+
+If the answer to any is no, rewrite.
 
 ## Writing & Thought Leadership
 
