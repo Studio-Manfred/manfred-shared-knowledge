@@ -18,7 +18,7 @@ Manfred skills are installed under `~/.claude/skills/` and trigger automatically
 Manfred ships skills, commands, and plugins through the `manfred` plugin marketplace. To register it (one-time, inside Claude Code):
 
 ```
-/plugin marketplace add jens-wedin/manfred-shared-knowledge
+/plugin marketplace add Studio-Manfred/manfred-shared-knowledge
 ```
 
 Then browse available plugins with `/plugin` and install with `/plugin install <name>@manfred`.
@@ -28,7 +28,7 @@ Then browse available plugins with `/plugin` and install with `/plugin install <
 Re-run the installer to pull the latest shared files:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/jens-wedin/manfred-shared-knowledge/main/install.sh | bash -s -- --force
+curl -fsSL https://raw.githubusercontent.com/Studio-Manfred/manfred-shared-knowledge/main/install.sh | bash -s -- --force
 ```
 
 The `--force` flag overwrites existing files after creating timestamped backups.

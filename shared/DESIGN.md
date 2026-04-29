@@ -184,7 +184,7 @@ Prefer the Tailwind v4 `@theme` utilities wherever possible — they're generate
 
 ## 13. Reference Material
 
-- Source: `github.com/jens-wedin/manfred-design_system`
+- Source: `github.com/Studio-Manfred/manfred-design_system`
 - Storybook: `npm run storybook` → `http://localhost:6006`
 - Brand assets (fonts, logotype files, brand guidelines PDF): `References/` in the design-system repo — not modified by the library
 - Companion short-form: `~/.claude/shared/manfred-brand.md` (brand voice + core values)

@@ -12,3 +12,6 @@
 
 # Installer backups (in case CLAUDE_HOME is set to repo root during local testing)
 *.backup.*
+
+# Local reference material (not part of the package)
+References/

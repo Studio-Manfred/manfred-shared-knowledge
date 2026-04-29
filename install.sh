@@ -2,11 +2,11 @@
 set -euo pipefail
 
 # Manfred Shared Knowledge — Claude Code Installer
-# Usage: curl -fsSL https://raw.githubusercontent.com/jens-wedin/manfred-shared-knowledge/main/install.sh | bash
+# Usage: curl -fsSL https://raw.githubusercontent.com/Studio-Manfred/manfred-shared-knowledge/main/install.sh | bash
 # Use --force to overwrite existing files (creates backups first)
 
-REPO_RAW="https://raw.githubusercontent.com/jens-wedin/manfred-shared-knowledge/main"
-REPO_GIT="${MANFRED_REPO_GIT:-https://github.com/jens-wedin/manfred-shared-knowledge.git}"
+REPO_RAW="https://raw.githubusercontent.com/Studio-Manfred/manfred-shared-knowledge/main"
+REPO_GIT="${MANFRED_REPO_GIT:-https://github.com/Studio-Manfred/manfred-shared-knowledge.git}"
 CLAUDE_DIR="${CLAUDE_HOME:-$HOME/.claude}"
 FORCE=false
 INSTALLED=0
@@ -153,7 +153,7 @@ echo ""
 
 if [ $INSTALLED -gt 0 ] || [ $SKIPPED -gt 0 ]; then
   echo "🔌 To install Manfred plugins, run this inside Claude Code:"
-  echo "     /plugin marketplace add jens-wedin/manfred-shared-knowledge"
+  echo "     /plugin marketplace add Studio-Manfred/manfred-shared-knowledge"
   echo ""
   echo "   Then: /plugin install <name>@manfred"
   echo ""

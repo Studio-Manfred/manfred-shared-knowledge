@@ -166,7 +166,7 @@ The Swedish book: **Upplevelseblomman** (`upplevelseblomman.se`).
 
 ## Visual Language
 
-The visual system is codified in `github.com/jens-wedin/manfred-design_system` and documented for LLM use in `~/.claude/shared/DESIGN.md`. Quick reference:
+The visual system is codified in `github.com/Studio-Manfred/manfred-design_system` and documented for LLM use in `~/.claude/shared/DESIGN.md`. Quick reference:
 
 ### Colors
 
@@ -201,5 +201,5 @@ Blue leads, warm neutrals hold the room, pink is for moments of human emphasis. 
 
 - **Full design system spec:** `~/.claude/shared/DESIGN.md`
 - **Decision framework:** `~/.claude/shared/design-principles.md`
-- **Design system source:** `github.com/jens-wedin/manfred-design_system`
-- **Shared knowledge repo:** `github.com/jens-wedin/manfred-shared-knowledge`
+- **Design system source:** `github.com/Studio-Manfred/manfred-design_system`
+- **Shared knowledge repo:** `github.com/Studio-Manfred/manfred-shared-knowledge`

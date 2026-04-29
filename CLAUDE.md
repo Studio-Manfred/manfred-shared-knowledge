@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-> This project follows Manfred conventions. Copy this file into your own projects as a starting point — `curl -fsSL https://raw.githubusercontent.com/jens-wedin/manfred-shared-knowledge/main/CLAUDE.md -o ./CLAUDE.md`.
+> This project follows Manfred conventions. Copy this file into your own projects as a starting point — `curl -fsSL https://raw.githubusercontent.com/Studio-Manfred/manfred-shared-knowledge/main/CLAUDE.md -o ./CLAUDE.md`.
 
 ## Conventions
 

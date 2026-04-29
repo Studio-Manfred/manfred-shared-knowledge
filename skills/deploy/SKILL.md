@@ -26,7 +26,7 @@ This skill automates the release workflow:
 4. Update README.md to reflect significant changes
 5. Commit the documentation updates
 6. Push to GitHub — but only after asking the user
-7. Optionally tag the release
+7. Tag the release
 
 The goal is to produce clean, informative release documentation and make the mechanical parts (commit, push, tag) seamless.
 
@@ -40,7 +40,7 @@ The goal is to produce clean, informative release documentation and make the mec
 | 4 | Update README.md (if significant changes) | No |
 | 5 | Commit docs | No |
 | 6 | Push to remote | Yes |
-| 7 | Create git tag | Yes (optional) |
+| 7 | Create git tag | Yes |
 
 ## Step 1: Analyze the commit history
 
@@ -152,7 +152,7 @@ Only push after explicit confirmation. Use:
 git push origin <branch>
 ```
 
-## Step 7: Tag (optional)
+## Step 7: Tag
 
 After pushing, suggest creating a git tag for the release:
 ```bash
@@ -160,7 +160,6 @@ git tag -a vX.Y.Z -m "Release vX.Y.Z"
 git push origin vX.Y.Z
 ```
 
-This is optional — ask the user if they want the tag. Some projects rely on tags for CI/CD releases, others don't.
 
 ## Edge cases
 
@@ -173,6 +172,5 @@ This is optional — ask the user if they want the tag. Some projects rely on ta
 
 - **Skipping the changelog under pressure**: Even if the user says "just push it", the changelog is the point of this skill. Offer to make it fast, but don't skip it.
 - **Raw commit messages in changelog**: Always rewrite commit messages into human-readable descriptions. Group related commits.
-- **Forgetting to ask about tags**: Step 7 is optional but should always be offered — some CI/CD pipelines depend on tags.
 - **Staging extra files**: Only stage CHANGELOG.md and README.md. Never use `git add .` or `git add -A`.
 - **Pushing without confirmation**: Steps 2 and 6 both require explicit user confirmation before proceeding.

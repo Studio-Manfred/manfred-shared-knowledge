@@ -11,7 +11,7 @@ A public repo that packages Manfred's shared Claude Code assets so every team me
 **1. Install shared files (CLAUDE.md + `~/.claude/shared/`):**
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/jens-wedin/manfred-shared-knowledge/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/Studio-Manfred/manfred-shared-knowledge/main/install.sh | bash
 ```
 
 Re-run with `--force` to overwrite existing files (backups are created automatically). Skills install via a shallow git clone, so `git` must be available on your machine.
@@ -19,7 +19,7 @@ Re-run with `--force` to overwrite existing files (backups are created automatic
 **2. Register the plugin marketplace (inside Claude Code):**
 
 ```
-/plugin marketplace add jens-wedin/manfred-shared-knowledge
+/plugin marketplace add Studio-Manfred/manfred-shared-knowledge
 ```
 
 Then browse with `/plugin` and install individual plugins with `/plugin install <name>@manfred`.
@@ -61,7 +61,7 @@ Skills ship as loose files for now. A migration to proper Claude Code plugins â€
 For each project you want to follow Manfred conventions, drop the template `CLAUDE.md` into the project root:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/jens-wedin/manfred-shared-knowledge/main/CLAUDE.md -o ./CLAUDE.md
+curl -fsSL https://raw.githubusercontent.com/Studio-Manfred/manfred-shared-knowledge/main/CLAUDE.md -o ./CLAUDE.md
 ```
 
 Then extend it with project-specific rules below the `---` marker.
@@ -81,7 +81,7 @@ Use conventional commits. Update `CHANGELOG.md` in the same PR.
 ## Uninstall
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/jens-wedin/manfred-shared-knowledge/main/uninstall.sh | bash -s -- --yes
+curl -fsSL https://raw.githubusercontent.com/Studio-Manfred/manfred-shared-knowledge/main/uninstall.sh | bash -s -- --yes
 ```
 
 Run without `--yes` (by downloading the script first) for interactive confirmation.
