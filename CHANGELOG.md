@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
-## [0.4.0] — 2026-04-29
+## [0.11.0] — 2026-04-29
 
 ### Added
 - `skills/release` — full production release skill that runs quality gates (lint, types+build, unit tests, a11y audit), waits for the Vercel deploy to reach `READY` after pushing, then comments + transitions Linear tickets and updates Linear Project descriptions. Sibling to the lightweight `deploy` skill — use `release` for projects with Vercel-GitHub deploys and `STU-###` tickets, `deploy` for everything else. Includes `references/linear-actions.md` (verified Linear MCP call patterns including the Linear Project vs project-Milestone distinction) and `references/vercel-wait.md` (deployment polling pattern). Built via the full TDD-for-skills loop in `superpowers:writing-skills` — three baseline pressure scenarios (just-ship-it, Linear-stale, typo-fix) drove the rationalization table; three REFACTOR scenarios verified compliance and surfaced two cosmetic-fast-path ambiguities that were patched.
