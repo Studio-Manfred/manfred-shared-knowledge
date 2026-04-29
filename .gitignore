@@ -14,4 +14,4 @@
 *.backup.*
 
 # Local reference material (not part of the package)
-References/
+/References/

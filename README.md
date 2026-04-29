@@ -38,7 +38,7 @@ Plus any plugins you install via `/plugin install`.
 
 ## Skills
 
-The installer adds these 11 skills to `~/.claude/skills/`. Each triggers automatically on specific phrases described in its `SKILL.md` frontmatter.
+The installer adds these 12 skills to `~/.claude/skills/`. Each triggers automatically on specific phrases described in its `SKILL.md` frontmatter.
 
 | Skill | Purpose |
 |-------|---------|
@@ -46,7 +46,8 @@ The installer adds these 11 skills to `~/.claude/skills/`. Each triggers automat
 | `a11y-dev` | Write accessible front-end code (WCAG, ARIA, keyboard) |
 | `a11y-qa` | Run accessibility audits on implemented code |
 | `brief-prd` | Author a Scandic-style 8-section product brief |
-| `deploy` | Cut a release — changelog, version bump, tag, push |
+| `deploy` | Cut a release — changelog, version bump, tag, push (lightweight) |
+| `release` | Full production release with quality gates, Vercel verification, and Linear updates |
 | `linkedin-reflect` | Reflective LinkedIn post (Swedish, Jens Wedin voice) |
 | `linkedin-show-and-tell` | Demo/showcase LinkedIn post (Swedish) |
 | `linkedin-teach` | Teaching LinkedIn post (Swedish) |

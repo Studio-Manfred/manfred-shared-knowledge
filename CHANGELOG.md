@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+## [0.4.0] — 2026-04-29
+
+### Added
+- `skills/release` — full production release skill that runs quality gates (lint, types+build, unit tests, a11y audit), waits for the Vercel deploy to reach `READY` after pushing, then comments + transitions Linear tickets and updates Linear Project descriptions. Sibling to the lightweight `deploy` skill — use `release` for projects with Vercel-GitHub deploys and `STU-###` tickets, `deploy` for everything else. Includes `references/linear-actions.md` (verified Linear MCP call patterns including the Linear Project vs project-Milestone distinction) and `references/vercel-wait.md` (deployment polling pattern). Built via the full TDD-for-skills loop in `superpowers:writing-skills` — three baseline pressure scenarios (just-ship-it, Linear-stale, typo-fix) drove the rationalization table; three REFACTOR scenarios verified compliance and surfaced two cosmetic-fast-path ambiguities that were patched.
+- `MEMORY.md` — repo-level self-learning log with a "Standing lessons" section (TDD-for-skills, Linear MCP gotchas, Vercel-GitHub deploy mechanics, repo conventions) and dated session entries. Read on session start, append on session close, promote recurring lessons.
+
+### Changed
+- `README.md` skills table now lists 12 skills; `deploy` row clarified as "lightweight"; new `release` row added.
+- `install.sh` and `uninstall.sh` `SKILLS=( … )` arrays include `release`.
+
 ## [0.3.4] — 2026-04-29
 
 ### Changed

@@ -16,7 +16,7 @@ FAILED=0
 SKILLS=(
   a11y-design a11y-dev a11y-qa
   brief-prd
-  deploy
+  deploy release
   linkedin-reflect linkedin-show-and-tell linkedin-teach
   markitdown-convert
   meeting-summary
