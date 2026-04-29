@@ -42,6 +42,21 @@ Promoted from session entries when they prove durable. Read these first.
 - Skills live under `skills/<name>/SKILL.md`. Heavy references under `skills/<name>/references/`.
 - Both `install.sh` and `uninstall.sh` have a `SKILLS=( … )` array that **must be updated together** when adding/removing a skill — easy to miss the second one.
 - Production GitHub remote: `https://github.com/Studio-Manfred/manfred-shared-knowledge.git`. The repo was rehomed from `jens-wedin` to `Studio-Manfred` in v0.3.3/0.3.4 — repo name itself was kept, only the org changed. The separate `manfred-design_system` (with underscore) is a different repo.
+- **`.gitignore` patterns must be anchored.** A bare `References/` matches at any depth and on macOS is also case-insensitive — it caught `skills/release/references/` until anchored to `/References/`. Anchor top-level-only ignore rules with a leading slash.
+
+### On orphan tags from abandoned branches
+
+**Twice now** (v0.3.3 → v0.3.4 and v0.4.0 → v0.11.0) the local repo had stale tags from an abandoned npm-publishing experiment that pointed at orphan commits never pushed to this remote. The pattern:
+
+1. Local `git tag -a vX.Y.Z` errors with `tag already exists`.
+2. `git ls-remote --tags origin | grep vX.Y` shows the remote does NOT have the tag.
+3. `git branch --contains vX.Y.Z` returns nothing → tag points at orphan work.
+
+**Two valid recoveries:**
+- **Bump past** (Manfred's chosen pattern) — increment to the next clear slot, ship under that. Safe, no destructive ops. The cost is a non-semantic version jump (e.g., 0.4.0 → 0.11.0 to clear a contiguous orphan range).
+- **Delete the orphan tags** — `git tag -d vX.Y.Z …`. Destructive locally; orphan commits stay in reflog ~90 days. Cleaner versioning. **Ask the user before doing this** — both times here, user picked bump-past.
+
+When the orphan range is small (one tag), bump-past costs almost nothing. When it's large (10 tags), the version number gets weird. Worth raising the delete option clearly when the range is wide.
 
 ---
 
@@ -50,9 +65,10 @@ Promoted from session entries when they prove durable. Read these first.
 ### 2026-04-29 — Built `skills/release` (full TDD loop)
 
 **Where we ended:**
-- New skill `skills/release/SKILL.md` (~280 lines) + `references/linear-actions.md` + `references/vercel-wait.md` written.
-- `install.sh`, `uninstall.sh`, `README.md` (12-skill table), `CHANGELOG.md` (`[Unreleased]`) all updated to include `release`.
-- **Not yet committed or released.** Working tree dirty. Next step is `/deploy` (or rather, the new `release` skill — but the repo itself has no Vercel/Linear so `deploy` is fine here).
+- New skill `skills/release/SKILL.md` (~280 lines) + `references/linear-actions.md` + `references/vercel-wait.md` written and shipped.
+- `install.sh`, `uninstall.sh`, `README.md` (12-skill table), `CHANGELOG.md` all updated.
+- **Released as v0.11.0** (intended v0.4.0; bumped past orphan tags v0.4.0–v0.10.1 from abandoned branch — see standing lessons).
+- The `release` skill was used to ship itself. Quality gates 2-5 all reported N/A (this is a docs/skill-bundle repo with no lint, types, tests, UI). Vercel-wait N/A (no Vercel). Linear N/A (no STU- refs). Skill correctly surfaced each N/A in the pre-flight summary rather than skipping silently.
 - Plan file: `/Users/jens.wedin/.claude/plans/i-want-to-create-linked-stearns.md`.
 
 **What was built:**
