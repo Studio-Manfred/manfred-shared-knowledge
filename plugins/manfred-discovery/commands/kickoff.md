@@ -9,7 +9,7 @@ Walk through these three steps in sequence. Don't rush — each one feeds the ne
 
 ## Step 1 — Product brief
 
-Use the `product-brief` skill to facilitate the 8-section brief. Don't dump all the sections at once; have a conversation. Pay particular attention to:
+Use the `manfred-discovery:product-brief` skill to facilitate the 8-section brief. Don't dump all the sections at once; have a conversation. Pay particular attention to:
 
 - Section 01 (The Opportunity) — push hard on problem-first
 - Section 03 (The Hypothesis) — gate on completeness
@@ -19,7 +19,7 @@ When the brief is drafted and saved, summarise the top three things you learned 
 
 ## Step 2 — Cagan risk profile
 
-Use the `cagan-risks` skill to produce a deeper risk profile, picking up from section 05 of the brief. For each risk:
+Use the `manfred-discovery:cagan-risks` skill to produce a deeper risk profile, picking up from section 05 of the brief. For each risk:
 
 - Confirm or revise the rating from the brief based on actual evidence
 - Name the cheapest test that retires each High (and worth-retiring Med)
@@ -29,7 +29,7 @@ Save the risk profile under `discovery-reports/cagan-risks-<slug>-<date>.md`. Cr
 
 ## Step 3 — Opportunity-solution tree
 
-Use the `opportunity-solution-tree` skill to stand up the OST:
+Use the `manfred-discovery:opportunity-solution-tree` skill to stand up the OST:
 
 - Anchor on the outcome from section 02 of the brief
 - Add the opportunities that came up in section 01 and any uncovered during the risk discussion

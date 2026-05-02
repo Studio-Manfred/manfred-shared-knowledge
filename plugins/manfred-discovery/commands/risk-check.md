@@ -9,11 +9,11 @@ This is the shortest discovery cycle in the plugin. 30–60 minutes of conversat
 
 - A feature is mid-build and someone wants to confirm it's still the right thing
 - A new idea needs a fast sanity check before being added to the roadmap
-- A `product-brief` got the risks at "Med" with no notes and someone wants the deeper read
+- A `manfred-discovery:product-brief` got the risks at "Med" with no notes and someone wants the deeper read
 
 ## Step 1 — Cagan risk profile (deep)
 
-Use the `cagan-risks` skill. Walk through Phase 1 (pre-flight: gather evidence) carefully — this is where the value of a risk-check sits. Don't accept "we know our customers" as evidence; ask for the data.
+Use the `manfred-discovery:cagan-risks` skill. Walk through Phase 1 (pre-flight: gather evidence) carefully — this is where the value of a risk-check sits. Don't accept "we know our customers" as evidence; ask for the data.
 
 For each risk that comes back High:
 
@@ -24,7 +24,7 @@ Save the profile under `discovery-reports/cagan-risks-<slug>-<date>.md`.
 
 ## Step 2 — Design the test for the highest-rated risk
 
-Use the `assumption-test` skill on the single highest-rated risk's cheapest test:
+Use the `manfred-discovery:assumption-test` skill on the single highest-rated risk's cheapest test:
 
 - State the assumption in the four-blank form (audience / behaviour / thing / reason)
 - Pick the technique

@@ -1,6 +1,6 @@
 ---
 name: opportunity-solution-tree
-description: Use when building or maintaining a Teresa Torres opportunity-solution tree (OST) — connecting a desired outcome to opportunities, solutions, and assumption tests. Triggers on "OST", "opportunity solution tree", "Torres tree", "tree this out", "map outcomes to opportunities", "what opportunities serve this outcome", "where does this solution attach". Produces a markdown OST that lives in the repo and gets updated weekly.
+description: Use when building or maintaining a Teresa Torres opportunity-solution tree (OST). Triggers on "OST", "opportunity solution tree", "Torres tree", "tree this out", "map outcomes to opportunities", "what opportunities serve this outcome", "where does this solution attach", "weekly OST review", "stand up an OST for X outcome".
 ---
 
 # opportunity-solution-tree

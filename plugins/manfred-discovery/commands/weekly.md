@@ -9,7 +9,7 @@ Walk through the cycle in three phases — one at the start of the week, one mid
 
 ## Start of week — Plan touchpoints
 
-Use the `customer-touchpoint-plan` skill to plan the week:
+Use the `manfred-discovery:customer-touchpoint-plan` skill to plan the week:
 
 - Confirm the mode (expansion / refinement / probe)
 - Set the recruit (segment, sample size, channel, incentive)
@@ -21,7 +21,7 @@ Save under `discovery/touchpoints/<YYYY>-W<week-number>.md`.
 
 ## Mid-week — Design assumption tests as needed
 
-If the week's mode is **probe**, or if a customer conversation surfaces an assumption that needs a test, use the `assumption-test` skill to design the experiment:
+If the week's mode is **probe**, or if a customer conversation surfaces an assumption that needs a test, use the `manfred-discovery:assumption-test` skill to design the experiment:
 
 - One assumption per test
 - Specific technique from the menu (not "do user research")
@@ -36,10 +36,10 @@ Friday afternoon, run the synthesis ritual (60 min, Trio):
 
 - Walk through what was heard in each conversation
 - Surface themes
-- Update the OST (`opportunity-solution-tree` skill) — opportunities added/refined/parked, solutions added/parked, test status updates
+- Update the OST (`manfred-discovery:opportunity-solution-tree` skill) — opportunities added/refined/parked, solutions added/parked, test status updates
 - Identify decisions taken
 
-Then use the `discovery-readout` skill to produce the cycle readout:
+Then use the `manfred-discovery:discovery-readout` skill to produce the cycle readout:
 
 - What we set out to learn (mode + outcome focus)
 - What we actually learned (with evidence + confidence)

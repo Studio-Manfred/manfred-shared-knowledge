@@ -1,6 +1,6 @@
 ---
 name: assumption-test
-description: Use when designing the cheapest test that retires a single assumption — Teresa Torres / Marty Cagan style. Triggers on "assumption test", "test this assumption", "what's the riskiest assumption", "smallest test we can run", "experiment design", "fake-door test", "wizard of oz", "concierge test", "validate this idea", "discovery experiment". Produces a one-page test design — hypothesis, method, success criteria, timebox, owner.
+description: Use when designing the cheapest test that retires a single assumption — Teresa Torres / Marty Cagan style. Triggers on "assumption test", "test this assumption", "what's the riskiest assumption", "smallest test we can run", "experiment design", "fake-door test", "wizard of oz", "concierge test", "validate this idea", "discovery experiment", "cheapest test for X risk".
 ---
 
 # assumption-test
