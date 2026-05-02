@@ -1,0 +1,14 @@
+{
+  "name": "manfred-knowledge",
+  "version": "0.1.0",
+  "description": "Knowledge-management utilities: Obsidian vault hygiene linting and batch document conversion to Markdown.",
+  "author": {
+    "name": "Jens Wedin (Manfred)",
+    "email": "jens@studiomanfred.com",
+    "url": "https://studiomanfred.com"
+  },
+  "homepage": "https://github.com/Studio-Manfred/manfred-shared-knowledge",
+  "repository": "https://github.com/Studio-Manfred/manfred-shared-knowledge",
+  "license": "MIT",
+  "keywords": ["obsidian", "knowledge", "markdown", "markitdown", "vault", "linting"]
+}

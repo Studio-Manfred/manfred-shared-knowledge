@@ -4,6 +4,21 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+## [0.12.0] — 2026-04-30
+
+### Changed
+- **Skills now ship as plugins.** Migrated 14 skills from the loose `skills/<name>/` layout into 5 themed plugins under `plugins/<plugin-name>/`. The marketplace at `.claude-plugin/marketplace.json` now lists `manfred-a11y`, `manfred-writing`, `manfred-product`, `manfred-dev`, and `manfred-knowledge` (each at `v0.1.0`). Marketplace metadata bumped to `v0.2.0`.
+- `install.sh` no longer copies skills. It now installs only the home `~/.claude/CLAUDE.md` and `~/.claude/shared/` reference docs, then prints the `/plugin install` commands. A new `check_legacy_skills` step warns users with leftover copies in `~/.claude/skills/` and prints the cleanup commands.
+- `README.md` rewritten around the plugin-first install flow with a per-plugin table and a migration section for users coming from `install.sh`-installed skills.
+- Top-level `skills/` directory removed — all skills now live under `plugins/<plugin>/skills/`.
+
+### Added
+- `plugins/manfred-dev/skills/test-my-code/` — opinionated pre-merge QA gate for Vite/React features (typecheck → lint → vitest → build → Playwright → axe). Saves a report file and posts the summary to the linked Linear ticket. Built today via the full TDD-for-skills loop. Calls into `manfred-a11y`'s `a11y-qa` for the runtime accessibility scan.
+- `plugins/manfred-knowledge/skills/clippings-linter/` — Obsidian vault hygiene (broken notes, missing tags, duplicates, orphans). Includes Python lint scripts.
+
+### Migration
+Existing users with `~/.claude/skills/<name>/` from previous `install.sh` runs: re-run `install.sh` once — it detects the legacy directories and prints the cleanup commands. Then `rm -rf ~/.claude/skills/<name>` for each affected skill and `/plugin install manfred-<plugin>@manfred` to pick up the plugin-distributed version.
+
 ## [0.11.0] — 2026-04-29
 
 ### Added

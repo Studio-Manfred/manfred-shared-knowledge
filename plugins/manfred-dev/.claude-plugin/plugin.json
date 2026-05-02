@@ -1,0 +1,14 @@
+{
+  "name": "manfred-dev",
+  "version": "0.1.0",
+  "description": "Engineering workflow skills for Vite/React projects: pre-merge QA, lightweight deploy, and full production release.",
+  "author": {
+    "name": "Jens Wedin (Manfred)",
+    "email": "jens@studiomanfred.com",
+    "url": "https://studiomanfred.com"
+  },
+  "homepage": "https://github.com/Studio-Manfred/manfred-shared-knowledge",
+  "repository": "https://github.com/Studio-Manfred/manfred-shared-knowledge",
+  "license": "MIT",
+  "keywords": ["dev", "qa", "deploy", "release", "vite", "react", "vitest", "playwright", "linear"]
+}

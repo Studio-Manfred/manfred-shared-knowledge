@@ -2,14 +2,20 @@
 set -euo pipefail
 
 # Manfred Shared Knowledge — Claude Code Uninstaller
-# Removes files installed by install.sh
-# Use --yes to skip confirmation prompts
+# Removes files installed by install.sh, plus any legacy skill copies
+# left over from pre-v0.12 (when skills were copied into ~/.claude/skills/
+# instead of installed as plugins).
+# Use --yes to skip confirmation prompts.
+# Plugin-installed skills are NOT removed by this script — use
+# `/plugin uninstall <name>@manfred` inside Claude Code for those.
 
 CLAUDE_DIR="${CLAUDE_HOME:-$HOME/.claude}"
 ASSUME_YES=false
 REMOVED=0
 
-SKILLS=(
+# Legacy skill names — present in ~/.claude/skills/ for users who installed
+# before the plugin migration. Removed here so the plugin versions take over.
+LEGACY_SKILLS=(
   a11y-design a11y-dev a11y-qa
   brief-prd
   deploy release
@@ -44,7 +50,7 @@ for f in "${FILES_TO_REMOVE[@]}"; do
     echo "  - $f"
   fi
 done
-for name in "${SKILLS[@]}"; do
+for name in "${LEGACY_SKILLS[@]}"; do
   if [ -d "$CLAUDE_DIR/skills/$name" ]; then
     echo "  - $CLAUDE_DIR/skills/$name/"
   fi
@@ -73,7 +79,7 @@ for f in "${FILES_TO_REMOVE[@]}"; do
   fi
 done
 
-for name in "${SKILLS[@]}"; do
+for name in "${LEGACY_SKILLS[@]}"; do
   if [ -d "$CLAUDE_DIR/skills/$name" ]; then
     rm -rf "$CLAUDE_DIR/skills/$name"
     echo "  🗑  removed $CLAUDE_DIR/skills/$name/"
