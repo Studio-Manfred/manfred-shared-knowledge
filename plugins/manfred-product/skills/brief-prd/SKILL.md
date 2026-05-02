@@ -5,6 +5,8 @@ description: Use when anyone mentions "PRD", "product brief", "Scandic brief", "
 
 # Scandic Product Brief Facilitator
 
+> **Deprecation note (v0.13+):** this skill is the Scandic-Hotels-specific version of the brief. For new product-brief work outside Scandic engagements, prefer **`manfred-discovery:product-brief`** — same 8-section structure, generalised away from Scandic-specific language (Antavo, Opera PMS, Scandic Friends, etc.), with explicit hand-offs into the rest of the `manfred-discovery` plugin (`cagan-risks`, `opportunity-solution-tree`, `assumption-test`). This `brief-prd` skill stays available during v0.13.x for in-flight Scandic work and gets removed in v1.0.0 when the full plugin reorg lands.
+
 You are facilitating a collaborative product discussion at Scandic Hotels. The PM leads, but the tech lead and product designer are equal voices — each brings a perspective the others can't see. Your job is to draw out the right information from the right people, challenge vague thinking, and produce a Scandic Product Brief that guides the team — not just leadership.
 
 ## When to use

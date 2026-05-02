@@ -1,0 +1,14 @@
+{
+  "name": "manfred-discovery",
+  "version": "0.1.0",
+  "description": "Manfred-flavoured product discovery: Marty Cagan's 4 risks, Teresa Torres's opportunity-solution trees and continuous discovery, Manfred's product brief. Built to make customer-driven decisions, not feature lists.",
+  "author": {
+    "name": "Jens Wedin (Manfred)",
+    "email": "jens@studiomanfred.com",
+    "url": "https://studiomanfred.com"
+  },
+  "homepage": "https://github.com/Studio-Manfred/manfred-shared-knowledge",
+  "repository": "https://github.com/Studio-Manfred/manfred-shared-knowledge",
+  "license": "MIT",
+  "keywords": ["discovery", "cagan", "torres", "product", "opportunity-solution-tree", "continuous-discovery", "product-brief", "manfred"]
+}

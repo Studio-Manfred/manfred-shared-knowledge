@@ -4,6 +4,29 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+## [0.13.0] — 2026-04-30
+
+### Added
+- **`manfred-discovery` plugin** — Manfred-flavoured product discovery synthesising Marty Cagan's four product risks and Teresa Torres's continuous discovery + opportunity-solution trees. 7 skills + 3 commands:
+  - Skills: `cagan-risks`, `opportunity-solution-tree`, `assumption-test`, `customer-touchpoint-plan`, `product-brief`, `discovery-readout`, `discovery-rituals`
+  - Commands: `/manfred-discovery:kickoff`, `/manfred-discovery:weekly`, `/manfred-discovery:risk-check`
+  - `discovery-readout` integrates with Linear via `mcp__linear-server__save_comment` (pattern from `manfred-dev:test-my-code`)
+  - `cagan-risks` built via the full TDD-for-skills loop in `superpowers:writing-skills` (RED baseline → GREEN → REFACTOR with three rationalization patches)
+- **`docs/manfred-skill-template.md`** — codified Manfred SKILL.md conventions: voice rules, Cagan/Torres lens guidance, Manfred-outputs checklist, TDD-for-skills pointer, attribution rules. Reference for all subsequent Manfred plugins.
+
+### Changed
+- `.claude-plugin/marketplace.json` metadata bumped to `v0.3.0`. `manfred-discovery` registered as the 6th plugin.
+- `README.md` — added `manfred-discovery` to the plugin table, documented the v1.0.0 design-discipline reorg roadmap (mirrors of `Owl-Listener/designer-skills` plugins, with absorption of existing utility plugins).
+
+### Transitional
+- `manfred-product:brief-prd` (Scandic-specific) and `manfred-discovery:product-brief` (generalised, with explicit Cagan/Torres hooks) coexist in v0.13.x. `brief-prd` carries a deprecation note. The full reorg lands in v1.0.0 — `manfred-product` removed, `brief-prd` content fully migrated.
+
+### Roadmap
+- v1.0.0 will reorg into 11 themed plugins replacing both the existing 5 utility plugins and the third-party `Owl-Listener/designer-skills` install. See README "Roadmap" section.
+
+### Attribution
+- Inspiration for the plugin/command structure (and several upcoming mirror plugins) draws from [Owl-Listener/designer-skills](https://github.com/Owl-Listener/designer-skills) — MIT licensed. The `manfred-discovery` plugin itself is Manfred-original; mirror plugins (when they ship) will be structurally adapted with Manfred voice and opinions.
+
 ## [0.12.0] — 2026-04-30
 
 ### Changed

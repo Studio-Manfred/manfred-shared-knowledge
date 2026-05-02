@@ -7,9 +7,15 @@
   },
   "metadata": {
     "description": "Shared Claude Code skills, commands, and plugins for Manfred",
-    "version": "0.2.0"
+    "version": "0.3.0"
   },
   "plugins": [
+    {
+      "name": "manfred-discovery",
+      "source": "./plugins/manfred-discovery",
+      "description": "Manfred-flavoured product discovery: Cagan's 4 risks, Torres's opportunity-solution trees and continuous discovery, Manfred's product brief",
+      "version": "0.1.0"
+    },
     {
       "name": "manfred-a11y",
       "source": "./plugins/manfred-a11y",
