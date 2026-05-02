@@ -7,9 +7,15 @@
   },
   "metadata": {
     "description": "Shared Claude Code skills, commands, and plugins for Manfred",
-    "version": "0.3.0"
+    "version": "0.4.0"
   },
   "plugins": [
+    {
+      "name": "manfred-design-research",
+      "source": "./plugins/manfred-design-research",
+      "description": "Manfred-flavoured user research: interviews, archetypes, journeys, empathy maps, usability tests, JTBD, card sorts, diary studies. Continuous discovery posture, Trio attendance, story-based interviewing.",
+      "version": "0.1.0"
+    },
     {
       "name": "manfred-discovery",
       "source": "./plugins/manfred-discovery",

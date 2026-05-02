@@ -4,6 +4,40 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+## [0.14.0] — 2026-04-30
+
+### Added
+- **`manfred-design-research` plugin** — Manfred-flavoured user research mirroring `Owl-Listener/designer-skills/design-research` (MIT) with Manfred opinions baked in. **11 skills + 4 commands**:
+  - **Adapted (9):** `summarize-interview`, `affinity-diagram`, `card-sort-analysis`, `diary-study-plan`, `empathy-map`, `jobs-to-be-done`, `usability-test-plan`, `journey-map`. Each carries an attribution footer per `docs/manfred-skill-template.md` rule 8.
+  - **Fresh (1):** `user-archetype` — Manfred-original. Chosen over "user persona" to sidestep the projection / bias / fabrication failure modes common in persona work. No invented names, photos, or biographical detail; behavioural attributes only.
+  - **Foundational + TDD'd (1):** `interview-script` — built via the full RED → GREEN → REFACTOR loop. RED baseline showed the typical agent writes hypothetical-future questions, blurs discovery and usability, and skips Trio attendance / recording / compensation. GREEN closed those gaps. REFACTOR pressure-test surfaced 3 patches: tighten Phase 1 escape hatch (require user pushback before the TBD escape), tighten Phase 2 "Both" combine path (require pushback before the escape hatch), and add a 24-hour-timeline rationalization row ("session is tomorrow, I'll sort logistics in the morning" → reschedule).
+  - **Absorbed (1):** `transcript-anonymizer` — relocated from `manfred-writing`. Identical content; the version in `manfred-writing` carries a deprecation note pointing here.
+  - **Commands (4):** `/manfred-design-research:discover`, `/manfred-design-research:interview`, `/manfred-design-research:synthesize`, `/manfred-design-research:test-plan` — orchestrators using fully-qualified skill references per template rule 6.
+
+### Manfred opinions enforced across the plugin
+
+- **Research isn't a phase** (design principle 2) — every skill ties back to continuous discovery cadence
+- **Trio attendance** — interview / usability skills enforce PM + designer + tech lead, not solo research
+- **Story-based interviewing** (Torres) — refuses leading + hypothetical questions
+- **Pay people for their time** — recruit guidance includes incentives
+- **Accessible first** (design principle 5) — recruit + test design include disabled / AT users; no skill leaves accessibility as a follow-up
+
+### Changed
+- `.claude-plugin/marketplace.json` metadata bumped to `v0.4.0`. `manfred-design-research` registered as the 7th plugin.
+- `README.md` — added `manfred-design-research` to the install commands and plugin table; flagged `manfred-writing:transcript-anonymizer` as deprecated.
+- `plugins/manfred-writing/skills/transcript-anonymizer/SKILL.md` — added deprecation note pointing to the new home.
+
+### Transitional
+- `transcript-anonymizer` lives in BOTH `manfred-writing` and `manfred-design-research` during v0.14.x. Identical content. The `manfred-writing` version is removed in v1.0.0 (Linear ticket [STU-67](https://linear.app/studio-manfred/issue/STU-67)).
+- Existing `manfred-writing:meeting-summary` was *not* moved — per Linear ticket [STU-59](https://linear.app/studio-manfred/issue/STU-59) edits, that skill is destined for a different plugin (TBD) rather than `manfred-design-research`.
+
+### Attribution
+- 9 adapted skills carry attribution footers per `docs/manfred-skill-template.md` rule 8.
+- `user-archetype` is Manfred-original; structurally inspired by `user-persona` in `Owl-Listener/designer-skills` but reframed end-to-end.
+
+### Roadmap
+- Linear ticket [STU-59](https://linear.app/studio-manfred/issue/STU-59) → Done. Next: [STU-60 manfred-design-systems](https://linear.app/studio-manfred/issue/STU-60).
+
 ## [0.13.0] — 2026-04-30
 
 ### Added

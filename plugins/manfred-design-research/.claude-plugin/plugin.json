@@ -1,0 +1,14 @@
+{
+  "name": "manfred-design-research",
+  "version": "0.1.0",
+  "description": "Manfred-flavoured user research: interviews, archetypes, journeys, empathy maps, usability tests, card sorts, diary studies, JTBD. Continuous discovery posture, Trio attendance, story-based interviewing.",
+  "author": {
+    "name": "Jens Wedin (Manfred)",
+    "email": "jens@studiomanfred.com",
+    "url": "https://studiomanfred.com"
+  },
+  "homepage": "https://github.com/Studio-Manfred/manfred-shared-knowledge",
+  "repository": "https://github.com/Studio-Manfred/manfred-shared-knowledge",
+  "license": "MIT",
+  "keywords": ["research", "interviews", "archetype", "journey-map", "empathy-map", "jtbd", "usability-test", "card-sort", "diary-study", "anonymization", "manfred"]
+}

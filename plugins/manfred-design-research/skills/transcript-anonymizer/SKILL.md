@@ -5,8 +5,6 @@ description: Use when the user wants to anonymize transcripts, remove PII from t
 
 # Transcript Anonymizer
 
-> **Deprecation note (v0.14+):** this skill has moved to `manfred-design-research:transcript-anonymizer` to live alongside the rest of the research workflow. The version here is identical and stays available during v0.14.x for in-flight work; it gets removed in v1.0.0 when `manfred-writing` is retired. New work should reach for `manfred-design-research:transcript-anonymizer`.
-
 Anonymize research transcripts and text files for GDPR/CCPA compliance by detecting personal information and replacing it with consistent, readable placeholders.
 
 ## When to Use

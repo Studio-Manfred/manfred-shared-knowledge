@@ -17,12 +17,13 @@ A public repo that packages Manfred's shared Claude Code assets so every team me
 **2. Install only the plugins you need:**
 
 ```
-/plugin install manfred-discovery@manfred  # Cagan + Torres product discovery
-/plugin install manfred-a11y@manfred       # accessibility — design, dev, QA
-/plugin install manfred-writing@manfred    # LinkedIn (Swedish), meeting summaries, transcript anonymisation
-/plugin install manfred-product@manfred    # Scandic product brief / PRD (transitional — folds into manfred-discovery in v1.0.0)
-/plugin install manfred-dev@manfred        # Vite/React: pre-merge QA, deploy, release
-/plugin install manfred-knowledge@manfred  # Obsidian vault linting, batch Markdown conversion
+/plugin install manfred-discovery@manfred         # Cagan + Torres product discovery
+/plugin install manfred-design-research@manfred   # interviews, archetypes, journeys, empathy, JTBD, usability tests
+/plugin install manfred-a11y@manfred              # accessibility — design, dev, QA
+/plugin install manfred-writing@manfred           # LinkedIn (Swedish) (transcript-anonymizer deprecated; use manfred-design-research)
+/plugin install manfred-product@manfred           # Scandic product brief / PRD (transitional — folds into manfred-discovery in v1.0.0)
+/plugin install manfred-dev@manfred               # Vite/React: pre-merge QA, deploy, release
+/plugin install manfred-knowledge@manfred         # Obsidian vault linting, batch Markdown conversion
 ```
 
 **3. (Optional) Install the home-level CLAUDE.md and shared design references:**
@@ -40,8 +41,9 @@ Re-run with `--force` to overwrite existing files (backups are created automatic
 | Plugin | Skills + commands | Use it if |
 |--------|-------------------|-----------|
 | `manfred-discovery` | 7 skills (`cagan-risks`, `opportunity-solution-tree`, `assumption-test`, `customer-touchpoint-plan`, `product-brief`, `discovery-readout`, `discovery-rituals`) + 3 commands (`/kickoff`, `/weekly`, `/risk-check`) | You shape product opportunities, run continuous discovery, or want to make customer-driven decisions over feature lists |
+| `manfred-design-research` | 11 skills (`interview-script`, `summarize-interview`, `affinity-diagram`, `card-sort-analysis`, `diary-study-plan`, `empathy-map`, `jobs-to-be-done`, `usability-test-plan`, `journey-map`, `user-archetype`, `transcript-anonymizer`) + 4 commands (`/discover`, `/interview`, `/synthesize`, `/test-plan`) | You run user research — interviews, synthesis, archetypes, journeys, usability tests. Continuous over project-shaped, Trio-attended, story-based |
 | `manfred-a11y` | `a11y-design`, `a11y-dev`, `a11y-qa` | You design or build interfaces and want WCAG-grade accessibility checks across design, dev, and QA |
-| `manfred-writing` | `linkedin-reflect`, `linkedin-show-and-tell`, `linkedin-teach`, `meeting-summary`, `transcript-anonymizer` | You publish on LinkedIn (Swedish), summarise meetings, or process research transcripts |
+| `manfred-writing` | `linkedin-reflect`, `linkedin-show-and-tell`, `linkedin-teach`, `meeting-summary`, `transcript-anonymizer` (deprecated; use `manfred-design-research:transcript-anonymizer`) | You publish on LinkedIn (Swedish) or summarise meetings |
 | `manfred-product` | `brief-prd` (transitional) | You write Scandic-specific product briefs. **Note:** new product-brief work should use `manfred-discovery:product-brief`. This plugin is removed in v1.0.0. |
 | `manfred-dev` | `deploy`, `release`, `test-my-code` | You ship Vite/React features and want pre-merge QA gates plus production-grade release flow |
 | `manfred-knowledge` | `markitdown-convert`, `clippings-linter` | You manage an Obsidian vault or batch-convert documents to Markdown |
