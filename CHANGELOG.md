@@ -4,6 +4,35 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+## [0.16.0] — 2026-05-03
+
+### Added
+- **`manfred-ux-strategy` plugin** — Manfred-flavoured UX strategy work mirroring `Owl-Listener/designer-skills/ux-strategy` (MIT) with Manfred opinions baked in. **8 skills + 3 commands**:
+  - **Adapted (6):** `competitive-analysis`, `design-brief`, `experience-map`, `metrics-definition`, `opportunity-framework`, `stakeholder-alignment`. Each carries an attribution footer per `docs/manfred-skill-template.md` rule 8.
+  - **Fresh (1):** `north-star-vision` — Manfred-original. Customer-driven floor, "what we give up" non-optional, scenarios as narratives not bullet points, ethics test against principle 6. The mirror's `north-star-vision` provided structural inspiration only — voice, refusal logic, trade-off enforcement are Manfred-specific.
+  - **Foundational + TDD'd (1):** `design-principles` — built via the full RED → GREEN → REFACTOR loop. RED baseline scored ~1/7 — agent invented 5 cold-start fintech principles without checking Manfred's canonical 15, accepted "quick is fine, meeting tomorrow" without pushback, skipped prioritisation, mixed in aspirational mush ("delight the user"). GREEN closed those gaps with: pre-flight requirement to read `~/.claude/shared/design-principles.md`, refusal of cold-start posters, (a)/(b)/(c) menu (adapt canonical 15 / meeting prep kit / starter set with workshop date), testable + trade-off-stated requirement per principle, customer-driven + ethics floors as non-negotiable. REFACTOR scored 6/6; surfaced two patches: required side-by-side canonical-vs-adapted check in Scenario D (stops "adapting" from becoming "quietly inventing"), and explicit guardrail that workshop-date is mandatory for the starter-set escape hatch.
+  - **Commands (3):** `/manfred-ux-strategy:benchmark` (competitive-analysis → experience-map → opportunity-framework), `/manfred-ux-strategy:frame-problem` (design-brief end-to-end), `/manfred-ux-strategy:strategize` (full strategy: principles → vision → competitive → opportunities → metrics → stakeholders).
+
+### Manfred opinions enforced across the plugin
+
+- **Customer-driven floor** (design principle 1) — every skill cites or flags evidence; "we believe…" gets surfaced as assumption
+- **Outcomes over outputs** — success criteria measure user/business changes, not feature lists; opportunities phrased as outcomes ("reduce abandonment 38%→15%") not outputs ("build a progress indicator")
+- **Warm + precise voice** — anti-pattern check against marketing verbs (transform, empower, leverage, supercharge, unlock, drive value)
+- **Critical & ethical** (design principle 6) — every strategy/brief includes "what does this design do in the world?" + harm check; non-negotiable
+- **Triangulation over single-framework certainty** — opportunity-framework runs impact-effort + RICE; disagreements become first-class outputs
+- **Trade-offs stated** — visions name what they give up; principles name their trade-off partner; opportunities have stated confidence
+
+### Changed
+- `.claude-plugin/marketplace.json` metadata bumped to `v0.6.0`. `manfred-ux-strategy` registered as the 9th plugin (first in list — closest to v1.0.0 final ordering).
+- `README.md` — added `manfred-ux-strategy` to the install commands and plugin table.
+
+### Attribution
+- 6 adapted skills (`competitive-analysis`, `design-brief`, `experience-map`, `metrics-definition`, `opportunity-framework`, `stakeholder-alignment`) carry attribution footers per `docs/manfred-skill-template.md` rule 8.
+- `design-principles` and `north-star-vision` are Manfred-original; the mirror's versions provided structural inspiration only — voice, refusal logic, Manfred-15 anchoring, and trade-off enforcement are Manfred-specific.
+
+### Roadmap
+- Linear ticket [STU-61](https://linear.app/studio-manfred/issue/STU-61) → Done. Next: [STU-62 manfred-ui-design](https://linear.app/studio-manfred/issue/STU-62).
+
 ## [0.15.0] — 2026-05-03
 
 ### Added

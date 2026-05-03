@@ -7,9 +7,15 @@
   },
   "metadata": {
     "description": "Shared Claude Code skills, commands, and plugins for Manfred",
-    "version": "0.5.0"
+    "version": "0.6.0"
   },
   "plugins": [
+    {
+      "name": "manfred-ux-strategy",
+      "source": "./plugins/manfred-ux-strategy",
+      "description": "Manfred-flavoured UX strategy: design principles (rooted in shared/design-principles.md), north-star vision, competitive analysis, design briefs, experience maps, opportunity frameworks, stakeholder alignment, metrics. Customer-driven first; outcomes over outputs; warm + precise; critical & ethical.",
+      "version": "0.1.0"
+    },
     {
       "name": "manfred-design-systems",
       "source": "./plugins/manfred-design-systems",
