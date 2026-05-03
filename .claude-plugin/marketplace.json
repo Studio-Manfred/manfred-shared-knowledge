@@ -7,9 +7,15 @@
   },
   "metadata": {
     "description": "Shared Claude Code skills, commands, and plugins for Manfred",
-    "version": "0.7.0"
+    "version": "0.8.0"
   },
   "plugins": [
+    {
+      "name": "manfred-toolkit",
+      "source": "./plugins/manfred-toolkit",
+      "description": "Manfred-flavoured designer toolkit: UX writing (Manfred voice baked in), case studies, design rationale, design-system adoption + token audit, presentation decks, and the LinkedIn (Swedish) post trio. Voice rules from shared/manfred-brand.md enforced; errors explain don't blame; absorbs the linkedin trio from manfred-writing.",
+      "version": "0.1.0"
+    },
     {
       "name": "manfred-design-ops",
       "source": "./plugins/manfred-design-ops",
@@ -49,7 +55,7 @@
     {
       "name": "manfred-writing",
       "source": "./plugins/manfred-writing",
-      "description": "LinkedIn posts (Swedish), meeting summaries, transcript anonymisation",
+      "description": "Meeting summaries (active). Linkedin trio + transcript anonymisation are DEPRECATED — moved to manfred-toolkit + manfred-design-research in v0.18. Plugin removed in v1.0.0 once meeting-summary finds its v1.0.0 home.",
       "version": "0.1.0"
     },
     {

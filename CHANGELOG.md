@@ -4,6 +4,44 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+## [0.18.0] — 2026-05-03
+
+### Added
+- **`manfred-toolkit` plugin** — Manfred-flavoured designer toolkit mirroring `Owl-Listener/designer-skills/designer-toolkit` (MIT) with Manfred opinions baked in, plus absorbing the LinkedIn trio from `manfred-writing`. **9 skills + 3 commands**:
+  - **Adapted (5):** `case-study`, `design-rationale`, `design-system-adoption`, `design-token-audit`, `presentation-deck`. Each carries an attribution footer per `docs/manfred-skill-template.md` rule 8.
+  - **Foundational + TDD'd (1):** `ux-writing` — Manfred-original. Built via the full RED → GREEN → REFACTOR loop. RED baseline scored 3/10 — agent used "Oops!", "Hmm,", exclamation stacking ("You're in!"), generic-SaaS-friendly tics, never asked about voice doc, accepted "quick is fine, friendly and on-brand" without context, produced copy that could ship for any signup flow. GREEN closed all 7 failure-mode gaps with: pre-flight requirement to read `~/.claude/shared/manfred-brand.md`, anti-patterns lint (refuses "Oops!", "Hmm,", "Yikes!", "Welcome aboard!", marketing verbs, corporate adjectives, exclamation stacking), errors-explain-don't-blame structure (what happened / what to do / one clear action — user is never the subject of failure), context-required for error copy (refuses generic "something went wrong" — demands real failure mode), CTA rules (specific verb + outcome, not "Submit"/"OK"), the quick-test (read aloud — would I cringe?). REFACTOR scored 9/9; surfaced two patches: replace productivity-deck framing ("5 min of clarification saves 30 min of revision") with the sharper craft argument ("generic copy isn't faster — it's permanent"), and add an explicit rationalisation row covering the engineering-deadline pressure with two faster paths (paste failure modes from code, or ship honest "TODO: copy" placeholders).
+  - **Absorbed (3):** `linkedin-reflect`, `linkedin-show-and-tell`, `linkedin-teach` — relocated from `manfred-writing`. Identical content; the versions in `manfred-writing` carry deprecation headers pointing here.
+  - **Commands (3):** `/manfred-toolkit:build-presentation`, `/manfred-toolkit:write-case-study`, `/manfred-toolkit:write-rationale`.
+
+### Manfred opinions enforced across the plugin
+
+- **Voice rules from `manfred-brand.md`** — anti-marketing-verb list (transform, empower, leverage, unlock, supercharge, drive, deliver value), anti-corporate-adjective list (cutting-edge, world-class, innovative, best-in-class, passionate), fragments OK, direct second person, concrete over abstract
+- **Errors explain, don't blame** — `ux-writing` enforces structure (what happened / what to do / one clear action); user is never the subject of failure
+- **CTAs specific verbs with outcomes** — "Get in touch" not "Submit"; "Save changes" not "Save"
+- **Quick test** — could I read this aloud without cringing? Run on every output before shipping
+- **Customer evidence floor** — case studies, rationales, presentations cite specifically
+- **Trade-offs named** — case studies + rationales surface what was given up; without trade-offs, both are propaganda
+
+### Changed
+- `.claude-plugin/marketplace.json` metadata bumped to `v0.8.0`. `manfred-toolkit` registered as the 11th plugin (first in list — closest to v1.0.0 final ordering). `manfred-writing` description updated to flag partial deprecation.
+- `manfred-writing/README.md` — full rewrite to reflect partial-deprecation status (linkedin trio + transcript-anonymizer deprecated; only `meeting-summary` active).
+- `plugins/manfred-writing/skills/linkedin-reflect/SKILL.md` — deprecation header pointing to `manfred-toolkit:linkedin-reflect`.
+- `plugins/manfred-writing/skills/linkedin-show-and-tell/SKILL.md` — deprecation header pointing to `manfred-toolkit:linkedin-show-and-tell`.
+- `plugins/manfred-writing/skills/linkedin-teach/SKILL.md` — deprecation header pointing to `manfred-toolkit:linkedin-teach`.
+- `README.md` — added `manfred-toolkit` to install commands and plugin table; updated `manfred-writing` row to reflect deprecation status.
+
+### Transitional
+- LinkedIn trio lives in BOTH `manfred-writing` and `manfred-toolkit` during v0.18.x. Identical content. `manfred-writing` is removed in v1.0.0 once `meeting-summary` finds a v1.0.0 home (Linear ticket [STU-67](https://linear.app/studio-manfred/issue/STU-67) tracks the v1.0.0 cleanup; `meeting-summary` home decision is unresolved).
+- `manfred-writing` remains installable for `meeting-summary` users; the deprecation is partial, not full.
+
+### Attribution
+- 5 adapted skills (`case-study`, `design-rationale`, `design-system-adoption`, `design-token-audit`, `presentation-deck`) carry attribution footers per `docs/manfred-skill-template.md` rule 8.
+- `ux-writing` is Manfred-original; the mirror's `ux-writing` provided structural inspiration only — voice-doc enforcement, anti-patterns lint, errors-explain-don't-blame structure, context-required-for-errors discipline, and CTA rules are Manfred-specific.
+- 3 absorbed LinkedIn skills are Manfred-original (no attribution change needed; they were Manfred-authored when they lived in `manfred-writing`).
+
+### Roadmap
+- Linear ticket [STU-63](https://linear.app/studio-manfred/issue/STU-63) → Done. Next: [STU-64](https://linear.app/studio-manfred/issue/STU-64) (next mirror plugin per the v1.0.0 plan).
+
 ## [0.17.0] — 2026-05-03
 
 ### Added

@@ -5,8 +5,6 @@ description: Use when writing a LinkedIn post for Jens Wedin (Manfred) that look
 
 # LinkedIn — Reflect Post (Jens Wedin / Manfred)
 
-> **DEPRECATED in v0.18.** This skill has moved to `manfred-toolkit:linkedin-reflect`. Identical content. Install `manfred-toolkit` and uninstall `manfred-writing` once `meeting-summary` finds its v1.0.0 home. This plugin is removed in v1.0.0.
-
 ## Overview
 
 En reflect post blickar tillbaka med ärlighet och värme. Firar utan att skryta, erkänner utmaningar utan självömkan, och får läsaren att känna sig som en del av historien. Personlig, men inte navel-gazing.
@@ -18,8 +16,8 @@ En reflect post blickar tillbaka med ärlighet och värme. Firar utan att skryta
 - Content is about making sense of what happened, not teaching how to do something
 
 **When NOT to use:**
-- Post is primarily teaching a concept or process → use `linkedin-teach`
-- Post showcases a concrete demo/result with media → use `linkedin-show-and-tell`
+- Post is primarily teaching a concept or process → use `manfred-toolkit:linkedin-teach`
+- Post showcases a concrete demo/result with media → use `manfred-toolkit:linkedin-show-and-tell`
 - Post should be in English or for a different person/brand
 
 ## Voice & Tone

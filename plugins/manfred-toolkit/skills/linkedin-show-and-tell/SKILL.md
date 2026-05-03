@@ -5,8 +5,6 @@ description: Use when writing a LinkedIn post for Jens Wedin (Manfred) that demo
 
 # LinkedIn — Show & Tell Post (Jens Wedin / Manfred)
 
-> **DEPRECATED in v0.18.** This skill has moved to `manfred-toolkit:linkedin-show-and-tell`. Identical content. Install `manfred-toolkit` and uninstall `manfred-writing` once `meeting-summary` finds its v1.0.0 home. This plugin is removed in v1.0.0.
-
 ## Overview
 
 En show & tell post presenterar något verkligt — en demo, ett resultat, ett verktyg i action. Mindre om att lära ut hela processen och mer om att väcka nyfikenhet: *titta vad som är möjligt*. Mediet (video, bild) gör det tunga lyftet — texten skapar kontext och känsla.
@@ -18,8 +16,8 @@ En show & tell post presenterar något verkligt — en demo, ett resultat, ett v
 - The visual/media carries the weight; text provides context and reaction
 
 **When NOT to use:**
-- Post is primarily teaching a concept → use `linkedin-teach`
-- Post is a reflection or celebration without concrete artifact → use `linkedin-reflect`
+- Post is primarily teaching a concept → use `manfred-toolkit:linkedin-teach`
+- Post is a reflection or celebration without concrete artifact → use `manfred-toolkit:linkedin-reflect`
 - Post should be in English or for a different person/brand
 
 ## Voice & Tone

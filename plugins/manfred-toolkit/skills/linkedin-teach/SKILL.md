@@ -5,8 +5,6 @@ description: Use when writing a LinkedIn post for Jens Wedin (Manfred) that teac
 
 # LinkedIn — Teach Post (Jens Wedin / Manfred)
 
-> **DEPRECATED in v0.18.** This skill has moved to `manfred-toolkit:linkedin-teach`. Identical content. Install `manfred-toolkit` and uninstall `manfred-writing` once `meeting-summary` finds its v1.0.0 home. This plugin is removed in v1.0.0.
-
 ## Overview
 
 A teach post visar hur något fungerar genom Jens egna erfarenheter. Inte en manual — en story om att göra något, med lärdomen inbakad. Visa resan, inte receptet.
@@ -18,8 +16,8 @@ A teach post visar hur något fungerar genom Jens egna erfarenheter. Inte en man
 - The post is about sharing knowledge, not celebrating a milestone or demoing a result
 
 **When NOT to use:**
-- Post is primarily a reflection or celebration → use `linkedin-reflect`
-- Post showcases a concrete demo/result with media → use `linkedin-show-and-tell`
+- Post is primarily a reflection or celebration → use `manfred-toolkit:linkedin-reflect`
+- Post showcases a concrete demo/result with media → use `manfred-toolkit:linkedin-show-and-tell`
 - Post should be in English or for a different person/brand
 
 ## Voice & Tone
