@@ -4,6 +4,43 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+## [0.15.0] — 2026-05-03
+
+### Added
+- **`manfred-design-systems` plugin** — Manfred-flavoured design systems work mirroring `Owl-Listener/designer-skills/design-systems` (MIT) with Manfred opinions baked in. **10 skills + 3 commands**:
+  - **Adapted (6):** `component-spec`, `documentation-template`, `icon-system`, `naming-convention`, `pattern-library`, `theming-system`. Each carries an attribution footer per `docs/manfred-skill-template.md` rule 8. (The mirror's `accessibility-audit` was skipped per Linear ticket [STU-60](https://linear.app/studio-manfred/issue/STU-60) — `a11y-qa` already covers the runtime gate.)
+  - **Foundational + TDD'd (1):** `design-token` — built via the full RED → GREEN → REFACTOR loop. RED baseline scored 0/7 — agent hardcoded six hex literals, used Tailwind's default palette, ignored dark mode, and accepted "I'm in a hurry" without pushback. GREEN added: pre-flight requirement to read `~/.claude/shared/DESIGN.md`, hard rules against raw hex / default Tailwind palette / phantom tokens, the (a)/(b)/(c) refusal menu when a semantic doesn't exist (add token / reuse semantic / neutral + icon). REFACTOR pressure-test scored 6/6; surfaced two patches: time-cost annotation on option (a) so users don't read it as "blocked indefinitely" (added "(15–30 min, not blocked indefinitely)") and an explicit rationalisation row covering the `var(--token-that-doesnt-exist)` reframe.
+  - **Absorbed (3):** `a11y-design`, `a11y-dev`, `a11y-qa` — relocated from `manfred-a11y`. Cross-references inside the skills updated to fully-qualified `manfred-design-systems:` form per template rule 6. `manfred-a11y` carries a deprecation note pointing here; both ship in v0.15.x and `manfred-a11y` is removed in v1.0.0.
+  - **Commands (3):** `/manfred-design-systems:audit-system` (project-wide compliance scan), `/manfred-design-systems:create-component` (spec → tokens → impl → docs → a11y gate), `/manfred-design-systems:tokenize` (replace hardcoded values with semantic tokens).
+
+### Manfred opinions enforced across the plugin
+
+- **Tokens from `~/.claude/shared/DESIGN.md`** — three-layer architecture (primitives → semantic → shadcn contract). No raw hex, no default Tailwind palette, no inventing missing semantics.
+- **Business-blue + human-pink + warm neutrals** — Manfred's palette doesn't ship `success`/`warning`/`info`. The skill refuses to invent and offers (a)/(b)/(c).
+- **WCAG 2.2 AA baseline** (design principle 5) — every component / pattern skill checks this floor.
+- **shadcn shapes are the contract** (design principle 10) — component specs mirror stock shadcn API where one exists.
+- **Dark mode day-one** (`~/.claude/shared/DESIGN.md` Section 9) — semantic tokens flip automatically; brand utilities stay literal; pair literal-brand surfaces with absolute foregrounds.
+
+### Changed
+- `.claude-plugin/marketplace.json` metadata bumped to `v0.5.0`. `manfred-design-systems` registered as the 8th plugin (first in list — closest to v1.0.0 final ordering).
+- `manfred-a11y` description prefixed with **DEPRECATED** in marketplace.json — skills moved to `manfred-design-systems`; plugin removed in v1.0.0.
+- `plugins/manfred-dev/skills/test-my-code/SKILL.md` — cross-reference updated from bare `a11y-qa` to fully-qualified `manfred-design-systems:a11y-qa` (gate 7 + Tools-used section).
+- `plugins/manfred-dev/skills/release/SKILL.md` — three references updated from `superpowers:a11y-qa` (typo from earlier era) and bare `a11y-qa` to `manfred-design-systems:a11y-qa` (prerequisites, gate 5, Cross-references section).
+- `plugins/manfred-dev/README.md` — Cross-plugin dependencies section now points at `manfred-design-systems`; legacy migration note included.
+- `README.md` — added `manfred-design-systems` to the install commands and plugin table; flagged `manfred-a11y` as deprecated.
+
+### Transitional
+- `a11y-design`, `a11y-dev`, `a11y-qa` live in BOTH `manfred-a11y` and `manfred-design-systems` during v0.15.x. Identical content. `manfred-a11y` is removed in v1.0.0 (Linear ticket [STU-67](https://linear.app/studio-manfred/issue/STU-67)).
+- Users with `manfred-a11y` installed should also install `manfred-design-systems` so `manfred-dev` cross-references resolve. After verifying the new plugin works, `manfred-a11y` can be uninstalled.
+
+### Attribution
+- 6 adapted skills (`component-spec`, `documentation-template`, `icon-system`, `naming-convention`, `pattern-library`, `theming-system`) carry attribution footers per `docs/manfred-skill-template.md` rule 8.
+- `design-token` is Manfred-original; the source mirror's `design-token` provided structural inspiration only (categories, tier names) — voice, refusal logic, three-layer-architecture enforcement, and the (a)/(b)/(c) menu are Manfred-specific.
+- Three absorbed a11y skills are Manfred-original (no attribution change needed; they were Manfred-authored when they lived in `manfred-a11y`).
+
+### Roadmap
+- Linear ticket [STU-60](https://linear.app/studio-manfred/issue/STU-60) → Done. Next: [STU-61 manfred-ux-strategy](https://linear.app/studio-manfred/issue/STU-61).
+
 ## [0.14.0] — 2026-04-30
 
 ### Added

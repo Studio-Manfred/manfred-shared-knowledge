@@ -7,9 +7,15 @@
   },
   "metadata": {
     "description": "Shared Claude Code skills, commands, and plugins for Manfred",
-    "version": "0.4.0"
+    "version": "0.5.0"
   },
   "plugins": [
+    {
+      "name": "manfred-design-systems",
+      "source": "./plugins/manfred-design-systems",
+      "description": "Manfred-flavoured design systems: tokens, components, theming, accessibility. Three-layer token architecture (primitives → semantic → shadcn contract), WCAG 2.2 AA baseline, composition over wrapping. Absorbs the a11y trio from manfred-a11y.",
+      "version": "0.1.0"
+    },
     {
       "name": "manfred-design-research",
       "source": "./plugins/manfred-design-research",
@@ -25,7 +31,7 @@
     {
       "name": "manfred-a11y",
       "source": "./plugins/manfred-a11y",
-      "description": "Accessibility design audits, dev-time checks, and pre-release QA gates",
+      "description": "Accessibility design audits, dev-time checks, and pre-release QA gates. DEPRECATED — skills moved to manfred-design-systems in v0.15. Removed in v1.0.0.",
       "version": "0.1.0"
     },
     {

@@ -11,8 +11,6 @@ description: >
 
 # Accessibility for Designers
 
-> **DEPRECATED in v0.15.** This skill has moved to `manfred-design-systems:a11y-design`. Identical content. Install `manfred-design-systems` and uninstall `manfred-a11y`. This plugin is removed in v1.0.0.
-
 Move accessibility left in the lifecycle — catch issues before code is written.
 
 ---
@@ -24,8 +22,8 @@ Move accessibility left in the lifecycle — catch issues before code is written
 - User shares a design screenshot and asks about accessibility
 
 **When NOT to use:**
-- Writing or fixing accessible code → use `a11y-dev`
-- Running automated audits on live code → use `a11y-qa`
+- Writing or fixing accessible code → use `manfred-design-systems:a11y-dev`
+- Running automated audits on live code → use `manfred-design-systems:a11y-qa`
 - Writing accessibility policy documents (no skill for this)
 
 ## 1. Annotations (Documentation & Specs)

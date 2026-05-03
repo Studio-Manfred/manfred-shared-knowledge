@@ -43,7 +43,7 @@ Run in order. **Stop on first HARD fail.** Fix and rerun, do not proceed past fa
 | 4 | Unit tests | `npx vitest run` | yes |
 | 5 | Build | `npm run build` | yes |
 | 6 | E2E | `npx playwright test` | yes |
-| 7 | Runtime a11y | start `npx vite preview` in background, delegate to `a11y-qa` skill (axe-core scan against the preview URL); inline-aggregate findings into this skill's report | hard for `serious`/`critical`; soft for `moderate`/`minor` |
+| 7 | Runtime a11y | start `npx vite preview` in background, delegate to `manfred-design-systems:a11y-qa` skill (axe-core scan against the preview URL); inline-aggregate findings into this skill's report | hard for `serious`/`critical`; soft for `moderate`/`minor` |
 | 8 | Audit | `npm audit --omit=dev` | soft (warn high+) |
 
 **Hard fail** → halt, write report-so-far, do NOT post to Linear, tell user what to fix.
@@ -124,4 +124,4 @@ If the ticket can't be resolved or the comment fails, surface to the user — do
 - **Bash**: git, npx, npm
 - **Write**: report file
 - **MCP**: `mcp__linear-server__get_issue`, `mcp__linear-server__save_comment`
-- **Skills called**: `a11y-qa` (runtime a11y scan), `superpowers:verification-before-completion` (evidence discipline)
+- **Skills called**: `manfred-design-systems:a11y-qa` (runtime a11y scan), `superpowers:verification-before-completion` (evidence discipline)

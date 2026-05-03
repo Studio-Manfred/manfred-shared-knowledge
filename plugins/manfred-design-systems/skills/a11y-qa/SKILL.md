@@ -11,8 +11,6 @@ description: >
 
 # Accessibility QA Testing
 
-> **DEPRECATED in v0.15.** This skill has moved to `manfred-design-systems:a11y-qa`. Identical content. Cross-plugin callers (`manfred-dev:test-my-code`, `manfred-dev:release`) now point at the new home. Install `manfred-design-systems` and uninstall `manfred-a11y`. This plugin is removed in v1.0.0.
-
 Systematically find, classify, and report accessibility violations so developers can fix them.
 
 ---
@@ -24,8 +22,8 @@ Systematically find, classify, and report accessibility violations so developers
 - User says "audit", "scan", "check WCAG compliance", "find violations"
 
 **When NOT to use:**
-- Writing or fixing accessible code → use `a11y-dev`
-- Reviewing designs/mockups before handoff → use `a11y-design`
+- Writing or fixing accessible code → use `manfred-design-systems:a11y-dev`
+- Reviewing designs/mockups before handoff → use `manfred-design-systems:a11y-design`
 - No code or running app available (design-only stage)
 
 ## Step 1: Choose a Scan Mode

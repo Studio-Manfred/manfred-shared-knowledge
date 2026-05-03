@@ -39,7 +39,7 @@ The skill assumes these are available. Check at the start of step 1; surface a c
 - `npm` (or detected equivalent: `pnpm`, `yarn`, `bun`, `pip`, etc.)
 - **Linear MCP server** — `linear-server`. Confirmed connected at Manfred. Key tools: `mcp__linear-server__list_issues`, `get_issue`, `save_comment`, `save_issue`, `list_issue_statuses`, `list_milestones`, `get_milestone`, `save_project`. **These are real, available tools — do not assume they're missing because past experience suggests Linear-via-MCP is unusual. Confirm with a small read (e.g., `list_teams`) if uncertain, then proceed.**
 - **Vercel MCP server** — `mcp__claude_ai_Vercel__list_deployments`, `get_deployment`, `get_deployment_build_logs`, `get_project`, `list_teams`. Required only if the repo deploys to Vercel.
-- The `superpowers:a11y-qa` skill (for step 5)
+- The `manfred-design-systems:a11y-qa` skill (for step 5)
 
 If — in some other environment — Linear MCP tools genuinely return "not available", the agent says so explicitly and falls back to a printed manual checklist. Linear must not be skipped silently.
 
@@ -93,7 +93,7 @@ Run the project's test command (`npm test`, `vitest run`, `pytest`, `cargo test`
 
 ### 5. Quality gate: accessibility audit
 
-Invoke the `a11y-qa` skill. Wait for it to return a pass/fail result. Do not just suggest running it.
+Invoke the `manfred-design-systems:a11y-qa` skill. Wait for it to return a pass/fail result. Do not just suggest running it.
 
 - The audit is part of the release. "We can audit later" turns into "we never audit". The skill's a11y-qa results are the gate.
 - N/A only when the project has no UI surface (a CLI, a worker, an API-only service). The a11y-qa skill itself reports "no UI to audit" in that case.
@@ -270,7 +270,7 @@ Each of those is the rationalization the skill exists to refuse.
 
 ## Cross-references
 
-- `superpowers:a11y-qa` — gate 5
+- `manfred-design-systems:a11y-qa` — gate 5
 - `superpowers:test-driven-development` — discipline for why gates fail closed
 - `deploy` skill (lightweight sibling) — when this skill is overkill
 - [references/linear-actions.md](references/linear-actions.md) — Linear MCP call patterns

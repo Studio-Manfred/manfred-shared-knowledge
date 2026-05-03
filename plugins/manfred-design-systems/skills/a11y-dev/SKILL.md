@@ -12,8 +12,6 @@ description: >
 
 # Accessibility for Developers
 
-> **DEPRECATED in v0.15.** This skill has moved to `manfred-design-systems:a11y-dev`. Identical content. Install `manfred-design-systems` and uninstall `manfred-a11y`. This plugin is removed in v1.0.0.
-
 Build accessible code from the start: **native HTML first, ARIA second, custom solutions last**.
 
 ---
@@ -25,8 +23,8 @@ Build accessible code from the start: **native HTML first, ARIA second, custom s
 - Implementing any interactive UI element (forms, modals, menus, tabs)
 
 **When NOT to use:**
-- Running a formal accessibility audit with reports → use `a11y-qa`
-- Reviewing designs/mockups before handoff → use `a11y-design`
+- Running a formal accessibility audit with reports → use `manfred-design-systems:a11y-qa`
+- Reviewing designs/mockups before handoff → use `manfred-design-systems:a11y-design`
 - Writing accessibility policy documents (no skill for this)
 
 ## 1. Semantic HTML First

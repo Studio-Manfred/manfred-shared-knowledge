@@ -12,14 +12,14 @@ Engineering workflow for Vite/React projects: pre-merge QA, lightweight deploy, 
 
 ## Cross-plugin dependencies
 
-`test-my-code` calls into the `manfred-a11y` plugin's `a11y-qa` skill for the runtime accessibility scan. Install both plugins for the full gate:
+`test-my-code` and `release` both call into the `manfred-design-systems` plugin's `a11y-qa` skill for the runtime accessibility scan. Install both plugins for the full gate:
 
 ```
-/plugin install manfred-a11y@manfred
+/plugin install manfred-design-systems@manfred
 /plugin install manfred-dev@manfred
 ```
 
-If `manfred-a11y` is not installed, the a11y gate falls back to a soft warning.
+If `manfred-design-systems` is not installed, the a11y gate falls back to a soft warning. (Pre-v0.15: `a11y-qa` lived in `manfred-a11y`; that plugin is deprecated and will be removed in v1.0.0.)
 
 ## Install
 

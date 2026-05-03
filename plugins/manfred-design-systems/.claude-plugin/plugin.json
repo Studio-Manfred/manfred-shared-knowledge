@@ -1,0 +1,5 @@
+{
+  "name": "manfred-design-systems",
+  "version": "0.1.0",
+  "description": "Manfred-flavoured design systems: tokens, components, theming, a11y. Built on shared/DESIGN.md (three-layer token architecture: primitives → semantic → shadcn contract). WCAG 2.2 AA baseline. Composition over wrapping (shadcn shapes are the contract)."
+}
