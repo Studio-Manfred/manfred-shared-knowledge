@@ -7,9 +7,15 @@
   },
   "metadata": {
     "description": "Shared Claude Code skills, commands, and plugins for Manfred",
-    "version": "0.6.0"
+    "version": "0.7.0"
   },
   "plugins": [
+    {
+      "name": "manfred-design-ops",
+      "source": "./plugins/manfred-design-ops",
+      "description": "Manfred-flavoured design ops: handoff specs (Linear-integrated, token-anchored), critiques, QA checklists, review process gates, sprints, team workflows, version control. Trio attendance; design system as source of truth; async-first.",
+      "version": "0.1.0"
+    },
     {
       "name": "manfred-ux-strategy",
       "source": "./plugins/manfred-ux-strategy",

@@ -1,0 +1,5 @@
+{
+  "name": "manfred-design-ops",
+  "version": "0.1.0",
+  "description": "Manfred-flavoured design ops: handoff specs (Linear-integrated, token-anchored), critiques, QA checklists, review process gates, design sprints, team workflows, version control strategy. Trio-attended reviews; design system as source of truth; handoffs go to Linear, not screenshots."
+}

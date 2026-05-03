@@ -4,6 +4,38 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+## [0.17.0] — 2026-05-03
+
+### Added
+- **`manfred-design-ops` plugin** — Manfred-flavoured design ops mirroring `Owl-Listener/designer-skills/design-ops` (MIT) with Manfred opinions baked in. **7 skills + 3 commands**:
+  - **Adapted (6):** `design-critique`, `design-qa-checklist`, `design-review-process`, `design-sprint-plan`, `team-workflow`, `version-control-strategy`. Each carries an attribution footer per `docs/manfred-skill-template.md` rule 8.
+  - **Foundational + TDD'd (1):** `handoff-spec` — Manfred-original. Built via the full RED → GREEN → REFACTOR loop. RED baseline scored 0/8 — agent dumped a kitchen-sink spec with hex literals, raw px values, custom components from scratch, no Linear posting, no walk-through ritual, accessibility as footnote, never read `~/.claude/shared/DESIGN.md`. GREEN closed all 8 gaps with: pre-flight reads (DESIGN.md + Linear ticket via MCP), token-first enforcement (no hex, no raw px, no phantom tokens, no default Tailwind palette), reference-existing-components rule, refusal of "dump everything" with hard 300-word cap, mandatory Linear posting via `mcp__linear-server__save_comment` when ticket linked, walk-through scheduling required, accessibility as first-class section. REFACTOR scored 9.5/10; surfaced three patches: hard-gate the 300-word cap (was soft target), tighten the no-Linear-ticket fallback (was silent escape hatch — now requires user choice between push-for-ticket / confirm-internal-only / draft-pending-ticket), tighten Manfred Lens voice slip ("doesn't apply directly. But:" → direct statement).
+  - **Commands (3):** `/manfred-design-ops:handoff` (pre-handoff review → token check → spec → Linear post → walk-through), `/manfred-design-ops:plan-sprint` (challenge framing → Day-0 checklist → 5-day schedule → recruit → test plan → follow-up), `/manfred-design-ops:setup-workflow` (5-component workflow setup, scaled to team size, documented in 2+ visible places).
+
+### Manfred opinions enforced across the plugin
+
+- **Trio attends cross-functional rituals** — PM + designer + tech lead at design reviews, critiques, retros, planning; not designer-solo
+- **Design system is source of truth** — handoffs reference tokens not screenshots; QA verifies token compliance not memory
+- **Linear is the delivery channel** — handoffs, design reviews, QA findings, sprint summaries all post via `mcp__linear-server__save_comment`
+- **Async-first, sync earned** — most "quick syncs" should be Linear comments + Loom; sync for tension resolution, not coordination
+- **Accessibility hard gate at every review** (design principle 5; WCAG 2.2 AA non-negotiable) — runtime gate via `manfred-design-systems:a11y-qa`
+- **Handoff specs tight** — ~300-word hard cap on intent + decisions + open questions; Figma is the measurement source, not the spec doc
+- **Kitchen-sink specs refused** — completeness theatre is worse than a tight spec engineering reads end-to-end
+
+### Changed
+- `.claude-plugin/marketplace.json` metadata bumped to `v0.7.0`. `manfred-design-ops` registered as the 10th plugin (first in list — closest to v1.0.0 final ordering).
+- `README.md` — added `manfred-design-ops` to the install commands and plugin table.
+
+### Note
+- v0.16.0 CHANGELOG mentioned "Next: STU-62 manfred-ui-design" — that was incorrect. STU-62 is `manfred-design-ops` (this release). `manfred-ui-design` is a later ticket. Linear is the source of truth for ticket → plugin mapping.
+
+### Attribution
+- 6 adapted skills carry attribution footers per `docs/manfred-skill-template.md` rule 8.
+- `handoff-spec` is Manfred-original; the mirror's version provided structural inspiration only — the Linear MCP integration, the hard 300-word cap, the existing-component reference rule, and the walk-through scheduling are Manfred-specific.
+
+### Roadmap
+- Linear ticket [STU-62](https://linear.app/studio-manfred/issue/STU-62) → Done. Next: [STU-63](https://linear.app/studio-manfred/issue/STU-63) (next mirror plugin per the v1.0.0 plan).
+
 ## [0.16.0] — 2026-05-03
 
 ### Added
