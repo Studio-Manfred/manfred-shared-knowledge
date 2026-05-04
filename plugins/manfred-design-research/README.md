@@ -55,4 +55,4 @@ Adapted from [Owl-Listener/designer-skills/design-research](https://github.com/O
 
 `user-archetype` is Manfred-original — chosen over the more common "user persona" because archetypes (behavioural, role-based) sidestep the marketing-persona trap and stay grounded in actual research patterns rather than demographic invention.
 
-`transcript-anonymizer` is Manfred-original, relocated from `manfred-writing` (where it lived in v0.13.x).
+`transcript-anonymizer` is Manfred-original, relocated from the now-removed `manfred-writing` plugin (where it lived in v0.13.x–v0.21.x).

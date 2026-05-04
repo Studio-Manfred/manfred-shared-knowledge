@@ -1,5 +1,5 @@
 {
   "name": "manfred-toolkit",
   "version": "0.1.0",
-  "description": "Manfred-flavoured designer toolkit: UX writing (Manfred voice baked in), case studies, design rationale, design-system adoption + token audit, presentation decks, and the LinkedIn (Swedish) post trio. Voice rules from shared/manfred-brand.md enforced; errors explain don't blame; quick test: could I read this aloud without cringing?"
+  "description": "Manfred-flavoured designer toolkit: UX writing (Manfred voice baked in), case studies, design rationale, design-system adoption + token audit, presentation decks, meeting summaries (bilingual SV/EN), and the LinkedIn (Swedish) post trio. Voice rules from shared/manfred-brand.md enforced; errors explain don't blame; quick test: could I read this aloud without cringing?"
 }

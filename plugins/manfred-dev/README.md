@@ -19,7 +19,7 @@ Engineering workflow for Vite/React projects: pre-merge QA, lightweight deploy, 
 /plugin install manfred-dev@manfred
 ```
 
-If `manfred-design-systems` is not installed, the a11y gate falls back to a soft warning. (Pre-v0.15: `a11y-qa` lived in `manfred-a11y`; that plugin is deprecated and will be removed in v1.0.0.)
+If `manfred-design-systems` is not installed, the a11y gate falls back to a soft warning.
 
 ## Install
 

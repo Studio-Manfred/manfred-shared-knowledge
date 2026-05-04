@@ -4,6 +4,149 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+## [1.0.0] — 2026-05-04
+
+### Manfred design ecosystem v1.0.0 — the breaking-change cut
+
+This release closes the v1.0.0 reorg epic. Three deprecated utility plugins are removed; their skills moved into the design-discipline plugins. The marketplace now lists 11 plugins covering the full design discipline plus supporting engineering / knowledge utilities.
+
+### Removed (breaking)
+
+- **`manfred-a11y`** — entire plugin removed. Skills (`a11y-design`, `a11y-dev`, `a11y-qa`) lived in `manfred-design-systems` since v0.15 with deprecation headers; now the only home.
+- **`manfred-product`** — entire plugin removed. The Scandic-specific `brief-prd` skill was superseded by the generalised `manfred-discovery:product-brief` (with explicit Cagan / Torres hooks) in v0.13.
+- **`manfred-writing`** — entire plugin removed. The LinkedIn trio (`linkedin-reflect`, `linkedin-show-and-tell`, `linkedin-teach`) lived in `manfred-toolkit` since v0.18; `transcript-anonymizer` in `manfred-design-research` since v0.14; `meeting-summary` relocated to `manfred-toolkit` in this release (the v1.0.0 home decision finally made — sits with `case-study`, `design-rationale`, the LinkedIn trio as a writing-output sibling).
+
+### Added
+
+- **`manfred-toolkit:meeting-summary`** — relocated from the now-removed `manfred-writing`. Identical content. The `manfred-toolkit` README + plugin description updated to register it as the 10th skill in the toolkit.
+
+### Migration
+
+For users on a v0.x install:
+
+```bash
+# Uninstall the three deprecated plugins
+/plugin uninstall manfred-a11y@manfred
+/plugin uninstall manfred-product@manfred
+/plugin uninstall manfred-writing@manfred
+
+# Install the new homes (each absorbs the relocated skills)
+/plugin install manfred-design-systems@manfred   # absorbs the a11y trio
+/plugin install manfred-discovery@manfred        # absorbs brief-prd → product-brief
+/plugin install manfred-toolkit@manfred          # absorbs linkedin-* + meeting-summary
+/plugin install manfred-design-research@manfred  # absorbs transcript-anonymizer
+
+# Optional — install the other 7 design-discipline plugins for full coverage
+/plugin install manfred-ux-strategy@manfred
+/plugin install manfred-ui-design@manfred
+/plugin install manfred-interaction-design@manfred
+/plugin install manfred-prototyping-testing@manfred
+/plugin install manfred-design-ops@manfred
+/plugin install manfred-dev@manfred
+/plugin install manfred-knowledge@manfred
+
+# Optional — uninstall the third-party Owl-Listener/designer-skills mirrors
+# now that Manfred's opinionated mirrors are available
+/plugin uninstall design-research@designer-skills
+/plugin uninstall design-systems@designer-skills
+/plugin uninstall ui-design@designer-skills
+/plugin uninstall ux-strategy@designer-skills
+/plugin uninstall design-ops@designer-skills
+/plugin uninstall designer-toolkit@designer-skills
+/plugin uninstall interaction-design@designer-skills
+/plugin uninstall prototyping-testing@designer-skills
+```
+
+### Where every relocated skill now lives
+
+| Old (≤ v0.21.x) | New (v1.0.0) |
+|---|---|
+| `manfred-a11y:a11y-design` | `manfred-design-systems:a11y-design` |
+| `manfred-a11y:a11y-dev` | `manfred-design-systems:a11y-dev` |
+| `manfred-a11y:a11y-qa` | `manfred-design-systems:a11y-qa` |
+| `manfred-product:brief-prd` | `manfred-discovery:product-brief` (generalised; Cagan + Torres hooks) |
+| `manfred-writing:linkedin-reflect` | `manfred-toolkit:linkedin-reflect` |
+| `manfred-writing:linkedin-show-and-tell` | `manfred-toolkit:linkedin-show-and-tell` |
+| `manfred-writing:linkedin-teach` | `manfred-toolkit:linkedin-teach` |
+| `manfred-writing:meeting-summary` | `manfred-toolkit:meeting-summary` |
+| `manfred-writing:transcript-anonymizer` | `manfred-design-research:transcript-anonymizer` |
+
+### Final v1.0.0 plugin set (11 plugins)
+
+| Plugin | Skills | Commands |
+|---|---|---|
+| `manfred-discovery` | 7 | 3 |
+| `manfred-design-research` | 11 | 4 |
+| `manfred-ux-strategy` | 8 | 3 |
+| `manfred-design-systems` | 10 | 3 |
+| `manfred-ui-design` | 9 | 4 |
+| `manfred-interaction-design` | 7 | 3 |
+| `manfred-prototyping-testing` | 8 | 4 |
+| `manfred-design-ops` | 7 | 3 |
+| `manfred-toolkit` | 10 | 3 |
+| `manfred-dev` | 3 | 0 |
+| `manfred-knowledge` | 2 | 0 |
+
+**Totals**: 82 skills + 30 commands across 11 plugins.
+
+### Foundational skills (built via TDD-for-skills)
+
+Each design-discipline mirror plugin shipped one foundational, TDD'd skill — built via the RED → GREEN → REFACTOR loop per `superpowers:writing-skills`:
+
+- `manfred-discovery:cagan-risks` (v0.13)
+- `manfred-design-research:customer-touchpoint-plan` (v0.14)
+- `manfred-design-systems:design-token` (v0.15)
+- `manfred-ux-strategy:design-principles` (v0.16)
+- `manfred-design-ops:handoff-spec` (v0.17)
+- `manfred-toolkit:ux-writing` (v0.18)
+- `manfred-ui-design:color-system` (v0.19)
+- `manfred-interaction-design:error-handling-ux` (v0.20)
+- `manfred-prototyping-testing:prototype-strategy` (v0.21)
+
+The TDD-for-skills pattern produced 2–3 patches per skill on average. Across 9 foundational skills: ~22 patches applied that the GREEN draft would otherwise have shipped without.
+
+### Cross-plugin handoffs codified
+
+The v1.0.0 set forms a coherent network of cross-plugin references:
+
+- `manfred-interaction-design:error-handling-ux` routes copy generation to `manfred-toolkit:ux-writing`
+- `manfred-prototyping-testing:prototype-strategy` routes pure stakeholder-comms to `manfred-toolkit:presentation-deck`
+- `manfred-prototyping-testing:*` skills are the implementation layer for `manfred-discovery:assumption-test`'s cheapest-test menu
+- `manfred-dev:test-my-code` calls `manfred-design-systems:a11y-qa` for the runtime accessibility gate
+- `manfred-ui-design:*` consumes tokens from `manfred-design-systems:design-token`
+- `manfred-design-ops:handoff-spec` is the final integration point for visual + interaction + a11y artifacts
+
+All cross-references are plugin-qualified (`plugin:skill` form) per `docs/manfred-skill-template.md` rule 6.
+
+### Changed
+
+- `.claude-plugin/marketplace.json` — bumped to `v1.0.0`. 11 plugins listed in the v1.0.0 taxonomy order: discovery → research → strategy → systems → UI → interaction → prototyping-testing → design-ops → toolkit → dev → knowledge. Every plugin individual `version` bumped to `1.0.0`.
+- `README.md` — full rewrite for v1.0.0. Removed the deprecated install lines and table rows; flattened the "Roadmap" section into the actual plugin table; added a "Migrating from a v0.x install" section with the relocation table and the optional designer-skills uninstall block.
+- `install.sh` — removed the deprecated plugin install hint lines; the `LEGACY_SKILLS` array still covers pre-v0.12 skill cleanup for users still on the loose `~/.claude/skills/` layout.
+- `plugins/manfred-toolkit/.claude-plugin/plugin.json` — description updated to mention `meeting-summary`.
+- `plugins/manfred-toolkit/README.md` — full rewrite of the migration section; meeting-summary registered in the skills table; cross-plugin handoffs updated to mention the inbound from `manfred-interaction-design:error-handling-ux`.
+- `plugins/manfred-design-systems/README.md` — migration-from-`manfred-a11y` section tightened to reflect the plugin's now-removed status.
+- `plugins/manfred-dev/README.md` — removed the parenthetical about the pre-v0.15 a11y-qa location.
+- `plugins/manfred-discovery/README.md` + `skills/product-brief/SKILL.md` — pointers to the removed `manfred-product:brief-prd` updated to past tense.
+- `plugins/manfred-design-research/README.md` — pointer to the removed `manfred-writing:transcript-anonymizer` updated to past tense.
+
+### Slack announcement + optional v0.13.x branch tag
+
+Out of scope for this commit. Slack announcement is a separate user action; v0.13.x compatibility branch tag is not being created (low ROI).
+
+### Verification
+
+- ✅ All 11 plugin manifests + marketplace.json valid (jq)
+- ✅ No skill in the 11 retained plugins references a removed plugin path (grep clean)
+- ✅ Every relocated skill exists at its new home (file present, content identical to old location modulo deprecation headers)
+- ✅ `manfred-dev:test-my-code` continues to reference `manfred-design-systems:a11y-qa` correctly
+- ✅ `install.sh` + `uninstall.sh` parse clean (`bash -n`)
+
+### Roadmap
+
+- Linear ticket [STU-67](https://linear.app/studio-manfred/issue/STU-67) → Done. Parent epic [STU-57](https://linear.app/studio-manfred/issue/STU-57) → Done.
+- v1.0.0 closes the design ecosystem reorg. Future versions bump per individual plugin work.
+
 ## [0.21.0] — 2026-05-04
 
 ### Added

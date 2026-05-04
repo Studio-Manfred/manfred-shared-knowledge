@@ -1,6 +1,6 @@
 # manfred-toolkit
 
-Manfred-flavoured designer toolkit: UX writing (Manfred voice baked in), case studies, design rationale, design-system adoption + token audit, presentation decks, and the LinkedIn (Swedish) post trio.
+Manfred-flavoured designer toolkit: UX writing (Manfred voice baked in), case studies, design rationale, design-system adoption + token audit, presentation decks, meeting summaries (bilingual SV/EN), and the LinkedIn (Swedish) post trio.
 
 Voice rules from `~/.claude/shared/manfred-brand.md` enforced throughout. Errors explain, don't blame. Quick test before any output ships: could I read this aloud without cringing?
 
@@ -13,6 +13,7 @@ Voice rules from `~/.claude/shared/manfred-brand.md` enforced throughout. Errors
 | `design-rationale` | "design rationale", "why did we choose this", "design decision doc", "ADR for design" — connects to canonical 15 design principles + customer evidence; alternatives + trade-offs named honestly |
 | `design-system-adoption` | "design system adoption", "get teams to use the DS", "system rollout", "DS not being used" — treat the system as a product with users; barriers surfaced honestly; metrics + qualitative pairing |
 | `design-token-audit` | "design token audit", "token coverage", "are we using tokens", "find hex literals" — three-layer audit (primitives → semantic → shadcn contract); flags + recommends, doesn't auto-fix |
+| `meeting-summary` | "summarize meeting", "meeting summary", "meeting notes", "mötessammanfattning", "sammanfatta möte" — bilingual structure (Swedish + English headers); language follows transcript dominance, not team origin; decisions ≠ discussions; Jens's actions separated from others' |
 | `presentation-deck` | "presentation", "deck", "slides", "stakeholder slides", "showcase deck" — hook → context → journey → solution → evidence → ask; one idea per slide |
 | `linkedin-teach` | LinkedIn post (Swedish) that teaches a concept, process, or tool through personal experience |
 | `linkedin-show-and-tell` | LinkedIn post (Swedish) that demonstrates something concrete — a tool, output, demo, or result |
@@ -34,6 +35,7 @@ Voice rules from `~/.claude/shared/manfred-brand.md` enforced throughout. Errors
 - **Quick test** before any output ships — could I read this aloud without cringing? If yes, rewrite.
 - **Customer evidence floor** — case studies, rationales, presentations all cite specifically (research session date + n, analytics event, customer verbatim) — generic claims get pushed back
 - **Trade-offs named** — case studies, rationales, presentations all surface what was given up; cases without trade-offs are propaganda
+- **Bilingual where it matters** — `meeting-summary` headers are always Swedish + English; language follows the transcript text, not the team origin
 
 ## Cross-plugin handoffs
 
@@ -42,6 +44,7 @@ Voice rules from `~/.claude/shared/manfred-brand.md` enforced throughout. Errors
 - **Pulls from `manfred-ux-strategy`** — design briefs, metrics-definition, principles all feed rationales + cases
 - **Pulls from `manfred-design-systems`** — token audits run against the system; design rationales reference component-spec decisions
 - **Pulls from `manfred-design-ops`** — handoff specs reference rationales for non-obvious decisions; design reviews feed rationale-writing moments
+- **Receives from `manfred-interaction-design`** — `error-handling-ux` hands off structured copy requests to `ux-writing`
 - **Cross-references `~/.claude/shared/manfred-brand.md`** — non-optional voice doc for every skill in this plugin
 - **Cross-references `~/.claude/shared/DESIGN.md`** — for token-audit work + presentation-deck visual style
 
@@ -51,9 +54,3 @@ Voice rules from `~/.claude/shared/manfred-brand.md` enforced throughout. Errors
 /plugin marketplace add Studio-Manfred/manfred-shared-knowledge
 /plugin install manfred-toolkit@manfred
 ```
-
-## Migrating from `manfred-writing` (linkedin trio)
-
-Pre-v0.18, the three LinkedIn skills (`linkedin-reflect`, `linkedin-show-and-tell`, `linkedin-teach`) lived in `manfred-writing`. They've moved here. Both plugins ship in v0.18.x for transition; `manfred-writing` keeps `meeting-summary` until its v1.0.0 home is decided.
-
-If you have `manfred-writing` installed, you can keep it for now (still needed for `meeting-summary`) — but install `manfred-toolkit` too for the LinkedIn trio. The deprecation headers on the old SKILL.md files point here.

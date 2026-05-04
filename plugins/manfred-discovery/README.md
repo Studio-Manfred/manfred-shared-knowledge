@@ -31,7 +31,7 @@ If you want the lighter shape — just write the brief, no ceremony — use `pro
 ## Cross-plugin dependencies
 
 - **`discovery-readout`** uses the Linear MCP integration pattern from `manfred-dev:test-my-code`. If a branch maps to a Linear ticket (`STU-\d+`), the readout posts as a comment on the ticket.
-- **`product-brief`** replaces the older `manfred-product:brief-prd`. Both ship in v0.13.x for transition; `brief-prd` will be removed in v1.0.0.
+- **`product-brief`** replaces the older `manfred-product:brief-prd` (the `manfred-product` plugin was removed in v1.0.0).
 
 ## Install
 

@@ -48,9 +48,7 @@ Manfred-flavoured design systems work: tokens, components, theming, accessibilit
 
 ## Migrating from `manfred-a11y`
 
-Pre-v0.15, the three a11y skills (`a11y-design`, `a11y-dev`, `a11y-qa`) lived in `manfred-a11y`. They've moved here. Both plugins ship in v0.15.x for transition; `manfred-a11y` is removed in v1.0.0.
-
-If you have `manfred-a11y` installed, you can keep it for now — but install `manfred-design-systems` too, since `manfred-dev` skills now reference the new home. Once you've confirmed the new plugin works, uninstall `manfred-a11y`:
+Pre-v1.0.0, the three a11y skills (`a11y-design`, `a11y-dev`, `a11y-qa`) lived in the now-removed `manfred-a11y` plugin. They live here now. If you're still on a v0.15.x–v0.21.x install, uninstall the old plugin and install this one:
 
 ```
 /plugin install manfred-design-systems@manfred

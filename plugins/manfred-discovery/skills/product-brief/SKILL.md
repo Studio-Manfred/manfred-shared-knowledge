@@ -329,4 +329,4 @@ Use this exact structure. Sections that are genuinely unknown should say **"To b
 
 - **Write**: the brief markdown file in the working directory
 - **Skills called next** (depending on section 08 outcome): `manfred-discovery:cagan-risks`, `manfred-discovery:opportunity-solution-tree`, `manfred-discovery:assumption-test`, `manfred-discovery:weekly`, `manfred-dev:test-my-code`
-- **Skill it replaces**: `manfred-product:brief-prd` (Scandic-specific, deprecated — will be removed in v1.0.0)
+- **Skill it replaces**: the older `manfred-product:brief-prd` (Scandic-specific) — `manfred-product` was removed in v1.0.0.
