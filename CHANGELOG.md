@@ -4,6 +4,50 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+## [0.21.0] — 2026-05-04
+
+### Added
+- **`manfred-prototyping-testing` plugin** — Manfred-flavoured prototyping + testing mirroring `Owl-Listener/designer-skills/prototyping-testing` (MIT) with Manfred opinions baked in. **8 skills + 4 commands**:
+  - **Adapted (7):** `a-b-test-design`, `accessibility-test-plan`, `click-test-plan`, `heuristic-evaluation`, `test-scenario`, `user-flow-diagram`, `wireframe-spec`. Each carries an attribution footer per `docs/manfred-skill-template.md` rule 8.
+  - **Foundational + TDD'd (1):** `prototype-strategy` — Manfred-original. Built via the full RED → GREEN → REFACTOR loop. RED baseline scored 0/10 — the agent took "3 weeks, CEO wants polish, design review with leadership" at face value, never asked what *assumption* the prototype was testing or which *Cagan risk* it was retiring, never named alternative cheaper tests, conflated LEARN (artifact for users) with SHOW (artifact for stakeholders), accepted "CEO likes polish" as a fidelity-driver instead of a stakeholder-management problem, treated the 3-week deadline as a fidelity constraint instead of a scope constraint, and produced a confident-sounding 3-week Figma recommendation. The baseline's own self-assessment captured the failure mode precisely: *"I produced a competent-sounding answer that a senior designer would recognise as solving the wrong problem."* GREEN closed all 10 failure-mode gaps with: four mandatory pre-flight answers (assumption + Cagan risk type + decision + audience), explicit (a)/(b)/(c) refusal menu when fidelity-first questions arrive, separation of LEARN vs SHOW artifacts as different deliverables for different audiences, fidelity → method → use case table (paper through coded prototype + Wizard-of-Oz + concierge MVP + pre-sale tests), Cagan-risk → typical fidelity recommendation table (value risk often = no prototype, just concierge / fake-door; usability = low / mid-fi mostly; feasibility = engineering spike not Figma; viability = conversation not prototype), explicit pushback rules for "CEO wants polish" (stakeholder-management problem) and deadline-as-fidelity-driver, build-to-throw-away check, full Common rationalisations table covering 10 real excuses, route-through-assumption-test as the upstream skill. REFACTOR scored 9/6/7 across three pressure-test scenarios; surfaced three patches: (1) closed the "Skip when: fidelity is already correctly chosen and the work is execution" loophole that let rationalisers escape the pre-flight ("we've already decided" / "don't push back, the team is aligned" — the strongest signal pre-flight has been skipped, not an exit), (2) added an inference exception so well-formed briefs (assumption stated + risk type unambiguously inferable) aren't over-refused — agent names inferences for the missing fields and asks one targeted confirmation question instead of running the full menu, (3) hardened the (a)/(b)/(c) menu's option (a) — agent must now name its inferred Cagan risk inline ("My read: this looks like a [risk type] because [reason] — confirm or correct"), converting the refusal from a stall into a testable hypothesis the user can accept or refute.
+  - **Commands (4):** `/manfred-prototyping-testing:evaluate` (chains heuristic eval + flow analysis + a11y + severity / impact / recommendations), `/manfred-prototyping-testing:experiment` (chains assumption-test confirmation + hypothesis with MDE + variants + sample sizing + decision-rule pre-commit), `/manfred-prototyping-testing:prototype-plan` (chains assumption-first → fidelity → flow → wireframes → scenarios → a11y → timeline), `/manfred-prototyping-testing:test-plan` (chains assumption framing → method selection → scenarios → click tests → a11y → logistics → analysis-plan pre-commit).
+
+### Manfred opinions enforced across the plugin
+
+- **Cheapest test wins** — every skill maps to `manfred-discovery:assumption-test`'s cheapest-test menu. Hi-fi prototypes are last resort, not default.
+- **Assumption-first, fidelity-last** — `prototype-strategy` refuses fidelity-first questions; routes to risk + decision + audience before recommending fidelity
+- **LEARN vs SHOW are different artifacts** — the user-research artifact and the stakeholder-show artifact are not the same thing; pretending they are is how teams burn 3 weeks on a hi-fi prototype that retires nothing
+- **Stakeholder polish ≠ fidelity** — "CEO wants polish" is stakeholder management, route to `manfred-toolkit:presentation-deck` (path (c) of the refusal menu)
+- **Deadline ≠ fidelity** — 3 weeks tells you *when*, not *what kind*; constrains method, not type
+- **A/B has hypotheses with MDE** — `a-b-test-design` refuses "let's just A/B it"; sample sizing pre-calculated; decision rule pre-committed; never auto-retry without idempotency
+- **Heuristic eval uses both Nielsen + Manfred 15** — coverage neither alone provides; multi-evaluator (3–5) finds 75–85%
+- **Accessibility = four layers** — automated catches 30%; manual + AT + users-with-disabilities catch the rest; layer 4 paid fairly, same rate as any participant
+- **Severity AND user impact** — a severity-3 issue affecting 0.01% of users ≠ a severity-2 issue breaking the primary task for everyone
+- **Test tasks goal-oriented, not UI-oriented** — "Where would you go to change your email" not "Click the settings icon"; pilot before launch
+- **Wireframes greyscale; spacing in tokens** — defer colour to visual phase via `manfred-ui-design:design-screen`; all 5 states (empty / loading / populated / error / partial); responsive breakpoints
+- **User flows: happy path first, then branches, then errors** — decision criteria explicit at every diamond
+
+### Cross-plugin handoffs (codified)
+
+- **Implementation layer for `manfred-discovery:assumption-test`** — this plugin provides techniques for the cheapest-test menu (click test, A/B, heuristic eval, AT testing, prototype-as-test); skills route their results back to update opportunity-tree nodes
+- **`prototype-strategy` routes to `manfred-toolkit:presentation-deck`** when the artifact is stakeholder-comms (path (c) of the refusal menu)
+- **Wireframes feed `manfred-ui-design:design-screen`** after stabilising
+- **`heuristic-evaluation` complements `manfred-design-systems:a11y-qa`** — eval includes principle 5; a11y-qa is the per-PR gate
+- **`accessibility-test-plan` plans, `manfred-design-systems:a11y-qa` executes**
+- **Pairs with `manfred-design-research:usability-test-plan`** — moderation craft for the qualitative side
+- **Pairs with `manfred-interaction-design:error-handling-ux` + `manfred-interaction-design:state-machine`** — error paths and state modelling for `user-flow-diagram`
+
+### Changed
+- `.claude-plugin/marketplace.json` metadata bumped to `v0.11.0`. `manfred-prototyping-testing` registered as the 14th plugin.
+- `README.md` — added `manfred-prototyping-testing` to install commands and plugin table.
+
+### Attribution
+- 7 adapted skills carry attribution footers per `docs/manfred-skill-template.md` rule 8.
+- `prototype-strategy` is Manfred-original; the mirror's `prototype-strategy` provided structural inspiration only — the Manfred discipline (assumption-first, LEARN vs SHOW separation, push back on stakeholder polish + deadline as fidelity drivers, (a)/(b)/(c) refusal menu with inline Cagan-risk hypothesis, build-to-throw-away check) is original.
+
+### Roadmap
+- Linear ticket [STU-66](https://linear.app/studio-manfred/issue/STU-66) → Done. Next: [STU-67](https://linear.app/studio-manfred/issue/STU-67) (final ticket — likely the v1.0.0 cleanup / breaking-change pass).
+
 ## [0.20.0] — 2026-05-04
 
 ### Added

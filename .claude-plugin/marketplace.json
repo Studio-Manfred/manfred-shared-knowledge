@@ -7,7 +7,7 @@
   },
   "metadata": {
     "description": "Shared Claude Code skills, commands, and plugins for Manfred",
-    "version": "0.10.0"
+    "version": "0.11.0"
   },
   "plugins": [
     {
@@ -20,6 +20,12 @@
       "name": "manfred-interaction-design",
       "source": "./plugins/manfred-interaction-design",
       "description": "Manfred-flavoured interaction design: animation, feedback, gestures, loading, micro-interactions, state machines, error-handling UX. Errors explain don't blame; motion respects prefers-reduced-motion; sustainability in the small. Defers copy to manfred-toolkit:ux-writing.",
+      "version": "0.1.0"
+    },
+    {
+      "name": "manfred-prototyping-testing",
+      "source": "./plugins/manfred-prototyping-testing",
+      "description": "Manfred-flavoured prototyping + testing: prototype strategy, click tests, A/B tests, heuristic evaluation, accessibility test plans, test scenarios, user flows, wireframes. Implementation layer for manfred-discovery:assumption-test's cheapest-test menu — every skill maps fidelity / method to which Cagan risk it retires. Cheapest test wins; LEARN ≠ SHOW; A/B has hypotheses with MDE.",
       "version": "0.1.0"
     },
     {
