@@ -4,6 +4,46 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+## [0.20.0] — 2026-05-04
+
+### Added
+- **`manfred-interaction-design` plugin** — Manfred-flavoured interaction design mirroring `Owl-Listener/designer-skills/interaction-design` (MIT) with Manfred opinions baked in. **7 skills + 3 commands**:
+  - **Adapted (6):** `animation-principles`, `feedback-patterns`, `gesture-patterns`, `loading-states`, `micro-interaction-spec`, `state-machine`. Each carries an attribution footer per `docs/manfred-skill-template.md` rule 8.
+  - **Foundational + TDD'd (1):** `error-handling-ux` — Manfred-original. Built via the full RED → GREEN → REFACTOR loop. RED baseline scored 1/8 on the rubric — agent took "quick is fine, blocking release" at face value, generated drop-in copy + React state without naming the failure mode (collapsed all timeout sub-modes — 504 / network drop / server overload / abort — into one generic "timed out"), wrote the copy directly instead of routing to `manfred-toolkit:ux-writing`, asserted "your changes haven't been lost" as fact without verifying, skipped motion / focus / reduced-motion / ARIA entirely, and missed the prevention layer (no client timeout, idempotency, optimistic UI mention). GREEN closed all 10 failure-mode gaps with: four mandatory pre-flight answers (failure mode + surface + recovery + user state), explicit (a)/(b)/(c) refusal menu when context missing, surface → recovery rules table (inline / toast / page / banner / modal mapped to recovery shapes), failure-mode → recovery defaults table (10 HTTP / network modes mapped to specific recovery paths), state-preservation non-negotiables (form values always survive, multi-step progress always survives), auto-retry policy with idempotency-key requirement (never auto-retry non-idempotent mutations without keys; 502/503/504/network-drop only with exponential backoff), focus management on error appearance (move focus to error or first invalid field), reduced-motion fallback for error animations, ARIA `role="alert"` vs `status` per mode, structured copy-handoff template that routes to `manfred-toolkit:ux-writing` (skill refuses to write copy directly — that's the failure mode this skill exists to prevent). REFACTOR scored 9/4/10 across three pressure-test scenarios; surfaced three patches: (1) closed the "Skip when: user wants the copy" loophole (a literal agent could deflect copy-only requests to `manfred-toolkit:ux-writing` without pre-flight — now requires the four answers first, even when only copy was requested), (2) added rationaliser trigger phrases to the description (`"just give me the error copy"`, `"keep it casual"`, `"Oops!"`, `"Something went wrong"`, `"we can iterate later"`) so the skill activates on the rationaliser path it would've missed, plus a new Common rationalisations row covering the iterate-later excuse, (3) hardened the (c) placeholder escape — used to be "flag as follow-up", now requires three concrete artifacts (Linear ticket titled `Replace placeholder error copy — <feature>`, code-level `// TODO(STU-XXX)` marker at the call site, worst-case design that gets state preservation + focus + ARIA + reduced-motion right) before (c) is on the table at all.
+  - **Commands (3):** `/manfred-interaction-design:design-interaction` (chains state-machine → micro-interactions → animation → gestures → feedback → error → loading), `/manfred-interaction-design:error-flow` (inventories failure modes → prevention → state model → recovery → copy handoff), `/manfred-interaction-design:map-states` (models states + transitions → loading + error + feedback + animation per state, verifies impossible states unreachable).
+
+### Manfred opinions enforced across the plugin
+
+- **Errors explain, don't blame** — `error-handling-ux` enforces `shared/manfred-brand.md` rule (what happened / what to do / one clear action; user is never the subject of failure)
+- **Copy lives in `manfred-toolkit:ux-writing`** — interaction skills design *flow*; words live in the toolkit. Generic "Something went wrong" is the failure mode this plugin exists to prevent
+- **Reduced motion is non-negotiable** (WCAG 2.3.3) — every animated skill mandates `prefers-reduced-motion: reduce` fallback
+- **Sustainability in the small** (principle 13) — motion / loading skills note CPU / battery / bundle cost
+- **Tokens, not raw values** — durations / easings reference `manfred-design-systems:design-token`; flag inline values as token leaks
+- **Undo > confirmation** — `feedback-patterns` defaults to undo; confirmation reserved for genuinely-irreversible actions
+- **Platform conventions first** — `gesture-patterns` follows iOS / Android HIG; custom gestures need a stated reason
+- **State preservation non-negotiable** — `error-handling-ux` requires form values, multi-step progress, scroll position to survive errors
+- **Discriminated unions over boolean soup** — `state-machine` enforces (state with `{status, ...context}` shape; not `{isLoading, isError, isSuccess, data?, error?}`)
+
+### Cross-plugin handoffs (codified)
+
+- **Routes copy to `manfred-toolkit:ux-writing`** — error messages, loading copy, toast text, button labels — the words are always written there with structured context from here
+- **Built on `manfred-design-systems:design-token`** — duration / easing / motion tokens
+- **Pairs with `manfred-design-systems:a11y-design` + `manfred-design-systems:a11y-qa`** — ARIA patterns, focus management, reduced-motion, keyboard equivalents
+- **Built on `manfred-ui-design`** — visual surface for the interaction lives there
+- **Feeds `manfred-design-ops:handoff-spec`** — interaction specs become engineering handoffs
+- **Surfaces `manfred-discovery:cagan-risks`** — when error UX or interaction friction is on a critical revenue / retention path
+
+### Changed
+- `.claude-plugin/marketplace.json` metadata bumped to `v0.10.0`. `manfred-interaction-design` registered as the 13th plugin.
+- `README.md` — added `manfred-interaction-design` to install commands and plugin table.
+
+### Attribution
+- 6 adapted skills carry attribution footers per `docs/manfred-skill-template.md` rule 8.
+- `error-handling-ux` is Manfred-original; the mirror's `error-handling-ux` provided structural inspiration only — four-pre-flight discipline, copy-routing-to-ux-writing rule, surface → recovery rules table, failure-mode → recovery defaults, state-preservation non-negotiables, auto-retry-with-idempotency policy, and the (a)/(b)/(c) refusal menu are Manfred-specific.
+
+### Roadmap
+- Linear ticket [STU-65](https://linear.app/studio-manfred/issue/STU-65) → Done. Next: [STU-66](https://linear.app/studio-manfred/issue/STU-66) (next mirror plugin per the v1.0.0 plan).
+
 ## [0.19.0] — 2026-05-04
 
 ### Added

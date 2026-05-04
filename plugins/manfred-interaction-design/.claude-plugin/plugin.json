@@ -1,0 +1,5 @@
+{
+  "name": "manfred-interaction-design",
+  "version": "0.1.0",
+  "description": "Manfred-flavoured interaction design: animation, feedback, gestures, loading, micro-interactions, state machines, error-handling UX. Errors explain don't blame; motion respects prefers-reduced-motion; sustainability in the small (animation has a cost). Defers copy generation to manfred-toolkit:ux-writing."
+}
