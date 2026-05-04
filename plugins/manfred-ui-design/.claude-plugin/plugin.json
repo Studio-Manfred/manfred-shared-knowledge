@@ -1,0 +1,5 @@
+{
+  "name": "manfred-ui-design",
+  "version": "0.1.0",
+  "description": "Manfred-flavoured UI design: layout, color, typography, responsive, dark mode, data viz, illustration, visual hierarchy. Hooks into shared/DESIGN.md tokens (no hex generation). Mobile first; flat first, depth is earned; Host Grotesk for UI."
+}

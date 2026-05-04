@@ -4,6 +4,46 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+## [0.19.0] — 2026-05-04
+
+### Added
+- **`manfred-ui-design` plugin** — Manfred-flavoured UI design mirroring `Owl-Listener/designer-skills/ui-design` (MIT) with Manfred opinions baked in. **9 skills + 4 commands**:
+  - **Adapted (8):** `dark-mode-design`, `data-visualization`, `illustration-style`, `layout-grid`, `responsive-design`, `spacing-system`, `typography-scale`, `visual-hierarchy`. Each carries an attribution footer per `docs/manfred-skill-template.md` rule 8.
+  - **Foundational + TDD'd (1):** `color-system` — Manfred-original. Built via the full RED → GREEN → REFACTOR loop. RED baseline scored 0/10 — agent generated 12+ raw hex values, ignored Manfred's six-colour palette entirely, invented success/warning/error/info as if they were standard, accepted "modern and trustworthy, quick is fine, due Friday" without pushback, never distinguished literal brand utilities from semantic tokens, gave wrong dark-mode advice (told to flip literal brand colours). GREEN closed all 10 failure-mode gaps with: pre-flight requirement to read `~/.claude/shared/DESIGN.md`, hard-rule against hex generation (route to existing six-colour palette), refusal-and-redirect (a)/(b)/(c) menu when semantic doesn't exist (add to design system / reuse existing semantic / status by icon + copy + neutral surface), three-layer architecture enforcement (primitives → semantic → shadcn contract), explicit literal-vs-semantic distinction (`bg-business-blue` literal, `bg-primary` semantic), dark-mode rules (semantic flips automatically; brand utilities stay literal; pair with absolute foregrounds), warm-background rhythm enforcement (avoid gray-on-gray; reach for `bg-beige` before any gray). REFACTOR scored 10/10; surfaced three patches: harden path (a) of the (a)/(b)/(c) menu (require Linear ticket + contrast verification before hex lands, not just "30–60 min"), drop `bg-accent` for "soft positive emphasis" from path (b) (overloads `human-pink`'s "moment of care" semantic), add explicit rationalisation row covering brand-utilities-as-meaning-carriers ("I'll use `bg-human-pink` to mean positive insight" — collapses the brand-decoration vs meaning-carrying layers; the rot the three-layer architecture exists to prevent).
+  - **Commands (4):** `/manfred-ui-design:color-palette`, `/manfred-ui-design:design-screen`, `/manfred-ui-design:responsive-audit`, `/manfred-ui-design:type-system`.
+
+### Manfred opinions enforced across the plugin
+
+- **Tokens from `~/.claude/shared/DESIGN.md`** — every visual output references the token layer; no hex generation
+- **Three-layer architecture** — primitives → semantic → shadcn contract; brand utilities don't flip, semantic tokens do
+- **Host Grotesk for UI; Guttery for logotype only** — typography skills enforce
+- **Warm-background rhythm** — `light-beige` canvas alternates with `white` or `beige` cards; avoid gray-on-gray (per Manfred brand guidelines)
+- **Flat first, depth is earned** — no heavy shadows, gradients, neumorphism unless functional
+- **Mobile first** (principle 12) — design for 320px first; expand
+- **Dark mode day-one** (principle 9) — use semantic tokens; dark mode is free
+- **Performance is a feature** (principle 13) — typography, illustration, viz skills note bundle / font-loading impact
+- **One primary action per view** — visual hierarchy reinforces user intent
+
+### Boundary clarification (`color-system` vs `manfred-design-systems:design-token`)
+
+Both skills enforce the token surface. They serve different units of work:
+
+- **`manfred-design-systems:design-token`** — component-level ("give me CSS for this Card") — already shipped in v0.15
+- **`manfred-ui-design:color-system`** — palette / page / surface-level ("colour palette for our new feature page") — shipped here
+
+Same refusal pattern, different unit. Cross-reference between them is mandatory.
+
+### Changed
+- `.claude-plugin/marketplace.json` metadata bumped to `v0.9.0`. `manfred-ui-design` registered as the 12th plugin (first in list — closest to v1.0.0 final ordering).
+- `README.md` — added `manfred-ui-design` to install commands and plugin table.
+
+### Attribution
+- 8 adapted skills carry attribution footers per `docs/manfred-skill-template.md` rule 8.
+- `color-system` is Manfred-original; the mirror's `color-system` provided structural inspiration only — voice, refusal logic, three-layer enforcement, warm-background rhythm, and the (a)/(b)/(c) menu are Manfred-specific.
+
+### Roadmap
+- Linear ticket [STU-64](https://linear.app/studio-manfred/issue/STU-64) → Done. Next: [STU-65](https://linear.app/studio-manfred/issue/STU-65) (next mirror plugin per the v1.0.0 plan).
+
 ## [0.18.0] — 2026-05-03
 
 ### Added
