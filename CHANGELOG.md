@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased]
 
+### Added
+
+- **`manfred-dev:bootstrap-manfred-project`** (STU-1040) — scaffolds a new Manfred project, overlays the WoW onto an existing repo, or downloads the template, via the public `manfred-bootstrap` repo's `install.sh`.
+- **`manfred-dev:install-manfred-claude-skills`** (STU-1040) — walks a colleague through registering this marketplace and picking plugins for their discipline.
+
 ## [1.1.0] — 2026-05-07
 
 ### v1.0.0 marketplace QA pass — STU-68 epic

@@ -1,6 +1,6 @@
 # manfred-dev
 
-Engineering workflow for Vite/React projects: pre-merge QA, lightweight deploy, and full production release.
+Engineering workflow for Vite/React projects: pre-merge QA, lightweight deploy, full production release, and project bootstrap.
 
 ## Skills
 
@@ -9,6 +9,8 @@ Engineering workflow for Vite/React projects: pre-merge QA, lightweight deploy, 
 | `test-my-code` | "test my code", "run QA", "is this ready to ship" — runs typecheck → lint → vitest → build → Playwright → axe gate, saves report, posts to Linear |
 | `deploy` | "deploy", "ship it", "version bump", "cut a release" — lightweight release path: changelog + tag + push |
 | `release` | "release", "ship to production", "ship STU-###" — production-grade with Vercel build verification + Linear ticket update |
+| `bootstrap-manfred-project` | "start a new Manfred project", "add manfred-bootstrap to this project", "overlay Manfred bootstrap", "download the latest bootstrap" — scaffolds a new project, overlays WoW onto existing, or clones the template |
+| `install-manfred-claude-skills` | "install manfred Claude skills", "set up manfred Claude" — registers the marketplace, picks plugins, optional home-level install |
 
 ## Cross-plugin dependencies
 
