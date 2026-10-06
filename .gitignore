@@ -15,3 +15,6 @@
 
 # Local reference material (not part of the package)
 /References/
+
+# QA reports — point-in-time artifacts; the script (scripts/qa-marketplace.sh) is the durable thing
+/qa-reports/

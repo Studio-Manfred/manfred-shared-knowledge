@@ -58,69 +58,6 @@ Re-run with `--force` to overwrite existing files (backups are created automatic
 | `manfred-dev` | 3 skills (`test-my-code`, `deploy`, `release`) | You ship Vite/React features and want pre-merge QA gates plus production-grade release flow. Calls `manfred-design-systems:a11y-qa` for the runtime accessibility scan |
 | `manfred-knowledge` | 3 skills (`markitdown-convert`, `clippings-linter`, `lint-marketplace`) | You manage an Obsidian vault, batch-convert documents to Markdown, or want a re-runnable static QA pass over the marketplace plugins themselves (10 deterministic checks; HARD vs SOFT exit) |
 
-## What `install.sh` installs
-
-| Source | Destination | Purpose |
-|--------|-------------|---------|
-| `shared/home-claude.md` | `~/.claude/CLAUDE.md` | Home-level conventions loaded into every session |
-| `shared/manfred-brand.md` | `~/.claude/shared/manfred-brand.md` | Brand guidelines |
-| `shared/DESIGN.md` | `~/.claude/shared/DESIGN.md` | Design system spec |
-| `shared/design-principles.md` | `~/.claude/shared/design-principles.md` | Design principles |
-
-Skills do not ship via `install.sh`. They live in plugins — see above.
-
-## Migrating from a v0.x install
-
-v1.0.0 is a breaking change. Three deprecated utility plugins were removed; their skills moved into the design-discipline plugins.
-
-### Removed (uninstall these)
-
-```
-/plugin uninstall manfred-a11y@manfred
-/plugin uninstall manfred-product@manfred
-/plugin uninstall manfred-writing@manfred
-```
-
-### Where their skills now live
-
-| Old location | New home |
-|---|---|
-| `manfred-a11y:a11y-design` | `manfred-design-systems:a11y-design` |
-| `manfred-a11y:a11y-dev` | `manfred-design-systems:a11y-dev` |
-| `manfred-a11y:a11y-qa` | `manfred-design-systems:a11y-qa` |
-| `manfred-product:brief-prd` | `manfred-discovery:product-brief` (generalised, with explicit Cagan / Torres hooks) |
-| `manfred-writing:linkedin-reflect` | `manfred-toolkit:linkedin-reflect` |
-| `manfred-writing:linkedin-show-and-tell` | `manfred-toolkit:linkedin-show-and-tell` |
-| `manfred-writing:linkedin-teach` | `manfred-toolkit:linkedin-teach` |
-| `manfred-writing:meeting-summary` | `manfred-toolkit:meeting-summary` |
-| `manfred-writing:transcript-anonymizer` | `manfred-design-research:transcript-anonymizer` |
-
-### Install the new plugins (these absorb the old skills)
-
-```
-/plugin install manfred-design-systems@manfred   # absorbs the a11y trio
-/plugin install manfred-discovery@manfred        # absorbs brief-prd → product-brief
-/plugin install manfred-toolkit@manfred          # absorbs linkedin-* + meeting-summary
-/plugin install manfred-design-research@manfred  # absorbs transcript-anonymizer
-```
-
-### Optional — remove the third-party `Owl-Listener/designer-skills` mirrors
-
-Now that Manfred's mirrors ship, the upstream installs are redundant:
-
-```
-/plugin uninstall design-research@designer-skills
-/plugin uninstall design-systems@designer-skills
-/plugin uninstall ui-design@designer-skills
-/plugin uninstall ux-strategy@designer-skills
-/plugin uninstall design-ops@designer-skills
-/plugin uninstall designer-toolkit@designer-skills
-/plugin uninstall interaction-design@designer-skills
-/plugin uninstall prototyping-testing@designer-skills
-```
-
-Manfred's mirrors are intentionally opinionated reframings — voice, Cagan + Torres lenses, three-layer tokens, four-layer a11y, push-back on stakeholder polish as fidelity. Not generic equivalents.
-
 ## Project-level setup
 
 For each project that should follow Manfred conventions, drop the template `CLAUDE.md` into the project root:
@@ -144,11 +81,7 @@ Use conventional commits. Update `CHANGELOG.md` in the same PR. New skills: foll
 
 ## Uninstall
 
-```bash
-curl -fsSL https://raw.githubusercontent.com/Studio-Manfred/manfred-shared-knowledge/main/uninstall.sh | bash -s -- --yes
-```
-
-Then inside Claude Code:
+Inside Claude Code:
 
 ```
 /plugin marketplace remove manfred
